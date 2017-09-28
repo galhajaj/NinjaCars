@@ -9,11 +9,5 @@ EditorBuildSettings:
     path: Assets/_Scenes/mainScene.unity
     guid: ede8334e23891da40b143a9efde82220
   - enabled: 1
-    path: Assets/_Scenes/headquartersScene.unity
-    guid: 251b11f9edc377a43b1eca6198bb3a6f
-  - enabled: 1
-    path: Assets/_Scenes/garageScene.unity
-    guid: a6601243a7e669d49b4172c28a744f9a
-  - enabled: 1
     path: Assets/_Scenes/battlegroundScene.unity
     guid: 9ae5fdd811e61bf44946899313d84904

@@ -13,15 +13,4 @@ public class ButtonCommands : MonoBehaviour
     {
         Application.Quit();
     }
-
-    public void SaveGame()
-    {
-        DataManager.Instance.SaveDataToFile();
-    }
-
-    public void LoadGame()
-    {
-        DataManager.Instance.LoadDataFromSaveFile();
-        Inventory.Instance.FillChipsListFromDataManager();
-    }
 }
