@@ -1,0 +1,13 @@
+Library/*
+Temp/*
+Build/*
+Obj/*
+*.pidb
+*.sln
+*.userprefs
+*.csproj
+*.orig
+*.apk
+*.exe
+.vs/*
+Assets/Scripts/Managers/DataManager.cs

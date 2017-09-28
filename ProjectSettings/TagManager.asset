@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - MapSector
+  - InventorySocketTag
+  - TurretSocketTag
+  - SkillSocketTag
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - TankLayer
+  - ChipsLayer
+  - SocketsLayer
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: BackgroundSortingLayer
+    uniqueID: 1166434881
+    locked: 0
+  - name: GroundUnitsSortingLayer
+    uniqueID: 1212310387
+    locked: 0
+  - name: TankBodySortingLayer
+    uniqueID: 1920058067
+    locked: 0
+  - name: TankTurretSortingLayer
+    uniqueID: 1722567105
+    locked: 0
+  - name: SocketsSortingLayer
+    uniqueID: 643395551
+    locked: 0
+  - name: ChipsSortingLayer
+    uniqueID: 2884427179
+    locked: 0
+  - name: UISortingLayer
+    uniqueID: 3643217125
+    locked: 0
+  - name: DraggedChipsSortingLayer
+    uniqueID: 3943554645
+    locked: 0

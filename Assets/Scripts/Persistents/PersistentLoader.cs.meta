@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: f73b8edfc5b026349a9c5f97457d1dd9
+timeCreated: 1503258655
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - DataManagerObj: {fileID: 1413442015052374, guid: cd45c0baed3230142b651a747db6b694,
+      type: 2}
+  - TankObj: {fileID: 1009437945730256, guid: b431bd70e6d4a614a8d5e7ef17c3593d, type: 2}
+  - InventoryObj: {fileID: 1480452278556934, guid: 713e868f63aa4b448beb432a36b7a058,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
