@@ -70,7 +70,6 @@ public class SkillsBar : MonoBehaviour
         _allChips.RemoveAt(randomChipIndex);
         newChip.transform.position = socket.position;
         newChip.transform.parent = socket;
-        //Chip chipScript = newChip.GetComponent<Chip>();
     }
 
     // =====================================================================================================
