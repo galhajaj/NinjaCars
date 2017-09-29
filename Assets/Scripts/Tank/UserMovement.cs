@@ -25,9 +25,6 @@ public class UserMovement : NetworkBehaviour
 	
     void FixedUpdate()
     {
-        /*if (!LocalPlayer.Instance.Get().IsActive)
-            return;*/
-
         MoveForward();
         MoveBackward();
         MoveRight();

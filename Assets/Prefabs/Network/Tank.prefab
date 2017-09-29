@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 60409459813401588}
   - component: {fileID: 114386435913587816}
   - component: {fileID: 114244519022634098}
+  - component: {fileID: 114965765545231142}
   - component: {fileID: 114453263184163350}
   - component: {fileID: 114528489091851614}
   - component: {fileID: 114489110168905768}
@@ -253,6 +254,20 @@ MonoBehaviour:
   MaxPower: 3
   Power: 1
   PowerRegenerationRate: 0.02
+--- !u!114 &114965765545231142
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1009437945730256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7f6749643c518f44971ad056db9bdb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShoorikanObj: {fileID: 1576035034101816, guid: 05c673a70ba4fb743aabc1a34c3cab32,
+    type: 2}
+  ShootPower: 600
 --- !u!212 &212766862754139368
 SpriteRenderer:
   m_ObjectHideFlags: 1
