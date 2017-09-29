@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Tank : MonoBehaviour
 {
-    public static Tank Instance;
+    //public static Tank Instance;
 
     public Damagable LifeData;
     public PowerUser PowerData;
@@ -14,7 +14,7 @@ public class Tank : MonoBehaviour
 
     void Awake()
     {
-        if (Instance == null)
+        /*if (Instance == null)
         {
             //DontDestroyOnLoad(gameObject);
             Instance = this;
@@ -25,7 +25,7 @@ public class Tank : MonoBehaviour
             {
                 Destroy(gameObject);
             }
-        }
+        }*/
     }
 
     void Start ()

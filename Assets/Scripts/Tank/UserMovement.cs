@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class UserMovement : MonoBehaviour
+public class UserMovement : NetworkBehaviour
 {
     public float Thrust = 300.0F;
     public float ReverseThrust = 150.0F;
@@ -14,18 +15,18 @@ public class UserMovement : MonoBehaviour
     void Awake()
     {
         _rigidBody = GetComponent<Rigidbody2D>();
-        _rigidBody.gravityScale = 0;
     }
 
 	void Start ()
     {
-		
-	}
+        if (!isLocalPlayer)
+            Destroy(this);
+    }
 	
     void FixedUpdate()
     {
-        if (!Tank.Instance.IsActive)
-            return;
+        /*if (!LocalPlayer.Instance.Get().IsActive)
+            return;*/
 
         MoveForward();
         MoveBackward();
@@ -82,10 +83,4 @@ public class UserMovement : MonoBehaviour
             _rigidBody.AddTorque(-AngularThrust);
         }
     }
-
-    void OnCollisionEnter2D(Collision2D coll)
-    {
-        //_rigidBody.freezeRotation = true;
-    }
-
 }

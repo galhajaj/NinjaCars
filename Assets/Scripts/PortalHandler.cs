@@ -37,7 +37,7 @@ public class PortalHandler : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        if (state == PortalState.PS_Unlocked && coll.gameObject == Tank.Instance.gameObject)
+        if (state == PortalState.PS_Unlocked && coll.gameObject == LocalPlayer.Instance.Get().gameObject)
         {
             //TODO: Should be part of some Scenesloaer
             //Destroy(gameObject);
