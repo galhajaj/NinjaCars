@@ -6,38 +6,33 @@ public class CameraFollow : MonoBehaviour
 	public float interpVelocity;
 	public float minDistance;
 	public float followDistance;
-	public GameObject target;
 	public Vector3 offset;
-	Vector3 targetPos;
 
+	private GameObject _target = null;
 	// ================================================================================================ //
 	void Start ()
 	{
-		targetPos = transform.position;
-        if (target == null)
-        {
-            //TASK: asd
-            //TODO: break dependency
-            target = GameObject.Find("Tank(Clone)");
-        }
-	}
-	// ================================================================================================ //
-	void LateUpdate () 
+
+    }
+    // ================================================================================================ //
+    void LateUpdate () 
 	{
-		if (target)
-		{
-			Vector3 posNoZ = transform.position;
-			posNoZ.z = target.transform.position.z;
+        if (_target == null)
+            _target = LocalPlayer.Instance.Get().gameObject;
 
-			Vector3 targetDirection = (target.transform.position - posNoZ);
+        if (_target == null)
+            return;
 
-			interpVelocity = targetDirection.magnitude * 5f;
+        Vector3 posNoZ = transform.position;
+		posNoZ.z = _target.transform.position.z;
 
-			targetPos = transform.position + (targetDirection.normalized * interpVelocity * Time.deltaTime); 
+		Vector3 targetDirection = (_target.transform.position - posNoZ);
 
-			transform.position = Vector3.Lerp( transform.position, targetPos + offset, 1.0F/*0.25f*/);
+		interpVelocity = targetDirection.magnitude * 5f;
 
-		}
+		Vector3 targetPos = transform.position + (targetDirection.normalized * interpVelocity * Time.deltaTime); 
+
+		transform.position = Vector3.Lerp( transform.position, targetPos + offset, 1.0F/*0.25f*/);
 	}
 	// ================================================================================================ //
 }
