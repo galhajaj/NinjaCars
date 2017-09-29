@@ -7,6 +7,10 @@ public class SkillsBar : MonoBehaviour
 {
     public static SkillsBar Instance;
 
+    public int NumberOfChipsAtStart = 3;
+
+    private List<UnityEngine.Object> _allChips = new List<UnityEngine.Object>();
+
     void Awake()
     {
         if (Instance == null)
@@ -22,11 +26,14 @@ public class SkillsBar : MonoBehaviour
         }
     }
 
-    public GameObject ChipObject;
-
     void Start()
     {
+        // init chips array
+        UnityEngine.Object[] allChipsArray = Resources.LoadAll("Chips");
+        for (int i = 0; i < allChipsArray.Length; ++i)
+            _allChips.Add(allChipsArray[i]);
 
+        AddUniqueRandomChips(NumberOfChipsAtStart);
     }
 
     void Update()
@@ -34,36 +41,36 @@ public class SkillsBar : MonoBehaviour
 
     }
     // =====================================================================================================
-    private void addRandomChips(int amount)
+    private void AddUniqueRandomChips(int amount)
     {
         for (int i = 0; i < amount; ++i)
         {
             Transform nextFreeSocket = getNextFreeSocket();
-            createRandomChip(nextFreeSocket);
+            createUniqueRandomChip(nextFreeSocket);
         }
     }
     // =====================================================================================================
     private Transform getNextFreeSocket()
     {
-        Transform freeSocket = null;
-
         foreach (Transform tile in this.transform)
         {
             if (tile.childCount == 0)
             {
-                return freeSocket;
+                return tile;
             }
         }
 
         return null;
     }
     // =====================================================================================================
-    private void createRandomChip(Transform socket)
+    private void createUniqueRandomChip(Transform socket)
     {
-        UnityEngine.Object[] allChips = Resources.LoadAll("Chips");
-        int randomChipIndex = UnityEngine.Random.Range(0, allChips.Length);
-        GameObject newChip = Instantiate(allChips[randomChipIndex] as GameObject);
-        Chip chipScript = newChip.GetComponent<Chip>();
+        int randomChipIndex = UnityEngine.Random.Range(0, _allChips.Count);
+        GameObject newChip = Instantiate(_allChips[randomChipIndex] as GameObject);
+        _allChips.RemoveAt(randomChipIndex);
+        newChip.transform.position = socket.position;
+        newChip.transform.parent = socket;
+        //Chip chipScript = newChip.GetComponent<Chip>();
     }
 
     // =====================================================================================================
