@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 114570699981897246}
   - component: {fileID: 114808906112641634}
   - component: {fileID: 58561103713985482}
-  - component: {fileID: 50980972816723762}
   m_Layer: 0
   m_Name: Shoorikan
   m_TagString: Untagged
@@ -39,7 +38,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4959859716172924}
   - component: {fileID: 212721052759982092}
-  - component: {fileID: 114076352899408558}
   m_Layer: 0
   m_Name: ShoorikanPic
   m_TagString: Untagged
@@ -74,26 +72,6 @@ Transform:
   m_Father: {fileID: 4590931218636052}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50980972816723762
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1576035034101816}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!58 &58561103713985482
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -109,18 +87,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.72
---- !u!114 &114076352899408558
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1593825919221234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b6f4b3731376314dae41f28166eb29f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpinRate: 500
 --- !u!114 &114570699981897246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -203,8 +169,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -651750171
-  m_SortingLayer: 7
+  m_SortingLayerID: 552322121
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: bd1a3c1302f570b488433896fd5ae340, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

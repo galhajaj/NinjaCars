@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ec218a6c03dd604492ea4a820295154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChipObject: {fileID: 0}
+  NumberOfChipsAtStart: 3
 --- !u!1 &636753929
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,7 +508,7 @@ Prefab:
     - target: {fileID: 224865709483202466, guid: 28cdab3cd890c80459c4ffdbcfe0b4e3,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 224865709483202466, guid: 28cdab3cd890c80459c4ffdbcfe0b4e3,
         type: 2}
@@ -725,7 +725,7 @@ Prefab:
     - target: {fileID: 224091617123156286, guid: 912706055c763c340b20266fb4f67402,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 224091617123156286, guid: 912706055c763c340b20266fb4f67402,
         type: 2}

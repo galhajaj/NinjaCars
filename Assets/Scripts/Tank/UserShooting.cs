@@ -6,12 +6,14 @@ using UnityEngine.Networking;
 public class UserShooting : NetworkBehaviour
 {
     public GameObject ShoorikanObj;
-    public float ShootPower = 100.0F;
+    public GameObject LaserObj;
+    public float LaserDuration = 0.1F;
+    public float ShootDistanceFromTank = 0.25F;
 
     void Start ()
     {
-        
-	}
+
+    }
 	
 	void Update ()
     {
@@ -20,19 +22,42 @@ public class UserShooting : NetworkBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            CmdShoot();
+            Vector3 shootDir = Quaternion.AngleAxis(90.0F, Vector3.forward) * this.transform.right;
+            Vector3 shootPosition = this.transform.position + ShootDistanceFromTank * shootDir;
+
+            RaycastHit2D hit = Physics2D.Raycast(shootPosition, shootDir);
+            if (hit.collider != null)
+            {
+                CmdHitWithShoorikan(this.transform.position, hit.point);
+            }
         }
 	}
 
     [Command]
-    private void CmdShoot()
+    private void CmdHitWithShoorikan(Vector2 origin, Vector2 destination)
     {
-        Vector3 shootDir = Quaternion.AngleAxis(90.0F, Vector3.forward) * this.transform.right;
+        /*GameObject laser = Instantiate(LaserObj, origin, Quaternion.identity) as GameObject;
+        LineRenderer line = laser.GetComponent<LineRenderer>();
+        line.SetPosition(0, origin);
+        line.SetPosition(1, destination);
+        Destroy(line, LaserDuration);
+        NetworkServer.Spawn(laser);*/
 
-        GameObject shoorikan = Instantiate(ShoorikanObj, this.transform.position + 1.0F * shootDir, this.transform.rotation) as GameObject;
-
-        shoorikan.GetComponent<Rigidbody2D>().AddForce(shootDir * ShootPower);
-
+        GameObject shoorikan = Instantiate(ShoorikanObj, destination, Quaternion.identity) as GameObject;
+        shoorikan.transform.Rotate(Vector3.forward * Random.Range(0.0F, 360.0F), Space.World);
         NetworkServer.Spawn(shoorikan);
+
+        RpcDoOnClient(origin, destination);
+    }
+
+    [ClientRpc]
+    public void RpcDoOnClient(Vector2 origin, Vector2 destination)
+    {
+        GameObject laser = Instantiate(LaserObj, origin, Quaternion.identity) as GameObject;
+        LineRenderer line = laser.GetComponent<LineRenderer>();
+        line.SetPosition(0, origin);
+        line.SetPosition(1, destination);
+        Destroy(line, LaserDuration);
+        //NetworkServer.Spawn(laser);
     }
 }

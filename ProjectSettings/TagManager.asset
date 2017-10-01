@@ -51,6 +51,12 @@ TagManager:
   - name: GroundUnitsSortingLayer
     uniqueID: 1212310387
     locked: 0
+  - name: LaserSortingLayer
+    uniqueID: 631939235
+    locked: 0
+  - name: ShoorikanSortingLayer
+    uniqueID: 552322121
+    locked: 0
   - name: TankBodySortingLayer
     uniqueID: 1920058067
     locked: 0
@@ -68,4 +74,7 @@ TagManager:
     locked: 0
   - name: DraggedChipsSortingLayer
     uniqueID: 3943554645
+    locked: 0
+  - name: New Layer
+    uniqueID: 806197763
     locked: 0

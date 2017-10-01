@@ -267,7 +267,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShoorikanObj: {fileID: 1576035034101816, guid: 05c673a70ba4fb743aabc1a34c3cab32,
     type: 2}
-  ShootPower: 600
+  LaserObj: {fileID: 1195524495744418, guid: 5c92985ad495dda468c9d8f67d0c615c, type: 2}
+  LaserDuration: 0.1
+  ShootDistanceFromTank: 0.5
 --- !u!212 &212766862754139368
 SpriteRenderer:
   m_ObjectHideFlags: 1
