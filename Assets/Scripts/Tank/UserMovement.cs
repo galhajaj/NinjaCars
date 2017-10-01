@@ -5,6 +5,11 @@ using UnityEngine.Networking;
 
 public class UserMovement : NetworkBehaviour
 {
+    public KeyCode ForwardKey = KeyCode.UpArrow;
+    public KeyCode BackwardKey = KeyCode.DownArrow;
+    public KeyCode RightKey = KeyCode.RightArrow;
+    public KeyCode LeftKey = KeyCode.LeftArrow;
+
     public float Thrust = 300.0F;
     public float ReverseThrust = 150.0F;
     public float SidewaysThrust = 300.0F;
@@ -27,15 +32,15 @@ public class UserMovement : NetworkBehaviour
     {
         MoveForward();
         MoveBackward();
-        MoveRight();
-        MoveLeft();
+        /*MoveRight();
+        MoveLeft();*/
         RotateRight();
         RotateLeft();
 	}
 
     void MoveForward()
     {
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(ForwardKey))
         {
             _rigidBody.AddForce(_rigidBody.transform.up * Thrust);
         }
@@ -43,13 +48,13 @@ public class UserMovement : NetworkBehaviour
         
     void MoveBackward()
     {
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(BackwardKey))
         {
             _rigidBody.AddForce(_rigidBody.transform.up * (-1) * ReverseThrust);
         }
     }
 
-    void MoveRight()
+    /*void MoveRight()
     {
         if (Input.GetKey(KeyCode.E))
         {
@@ -63,11 +68,11 @@ public class UserMovement : NetworkBehaviour
         {
             _rigidBody.AddForce(_rigidBody.transform.right * (-1) * SidewaysThrust);
         }
-    }
+    }*/
 
     void RotateLeft()
     {
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(LeftKey))
         {
             _rigidBody.AddTorque(AngularThrust);
         }
@@ -75,7 +80,7 @@ public class UserMovement : NetworkBehaviour
 
     void RotateRight()
     {
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(RightKey))
         {
             _rigidBody.AddTorque(-AngularThrust);
         }
