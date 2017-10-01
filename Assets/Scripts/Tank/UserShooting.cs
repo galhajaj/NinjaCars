@@ -9,10 +9,12 @@ public class UserShooting : NetworkBehaviour
     public GameObject LaserObj;
     public float LaserDuration = 0.1F;
     public float ShootDistanceFromTank = 0.25F;
+    public AudioClip ShootSound;
+    private AudioSource _audioSource;
 
     void Start ()
     {
-
+        _audioSource = this.GetComponent<AudioSource>();
     }
 	
 	void Update ()
@@ -53,6 +55,8 @@ public class UserShooting : NetworkBehaviour
     [ClientRpc]
     public void RpcThrowShoorikanOnClient(Vector2 origin, Vector2 destination, float shoorikanAngle)
     {
+        _audioSource.PlayOneShot(ShootSound);
+
         GameObject shoorikan = Instantiate(ShoorikanObj, destination, Quaternion.identity) as GameObject;
         shoorikan.transform.Rotate(Vector3.forward * shoorikanAngle, Space.World);
 
