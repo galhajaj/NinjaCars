@@ -33,19 +33,15 @@ public class UserShooting : NetworkBehaviour
                     CmdDestroyPlayer(hit.collider.gameObject);
                 }
 
-                CmdHitWithShoorikan(this.transform.position, hit.point);
+                CmdThrowShoorikan(this.transform.position, hit.point);
             }
         }
 	}
 
     [Command]
-    private void CmdHitWithShoorikan(Vector2 origin, Vector2 destination)
+    private void CmdThrowShoorikan(Vector2 origin, Vector2 destination)
     {
-        GameObject shoorikan = Instantiate(ShoorikanObj, destination, Quaternion.identity) as GameObject;
-        shoorikan.transform.Rotate(Vector3.forward * Random.Range(0.0F, 360.0F), Space.World);
-        NetworkServer.Spawn(shoorikan);
-
-        RpcDoOnClient(origin, destination);
+        RpcThrowShoorikanOnClient(origin, destination, Random.Range(0.0F, 360.0F));
     }
 
     [Command]
@@ -55,8 +51,11 @@ public class UserShooting : NetworkBehaviour
     }
 
     [ClientRpc]
-    public void RpcDoOnClient(Vector2 origin, Vector2 destination)
+    public void RpcThrowShoorikanOnClient(Vector2 origin, Vector2 destination, float shoorikanAngle)
     {
+        GameObject shoorikan = Instantiate(ShoorikanObj, destination, Quaternion.identity) as GameObject;
+        shoorikan.transform.Rotate(Vector3.forward * shoorikanAngle, Space.World);
+
         GameObject laser = Instantiate(LaserObj, origin, Quaternion.identity) as GameObject;
         LineRenderer line = laser.GetComponent<LineRenderer>();
         line.SetPosition(0, origin);

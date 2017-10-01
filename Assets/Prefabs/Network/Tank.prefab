@@ -265,7 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7f6749643c518f44971ad056db9bdb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShoorikanObj: {fileID: 1576035034101816, guid: 05c673a70ba4fb743aabc1a34c3cab32,
+  ShoorikanObj: {fileID: 1772675571485230, guid: 05c673a70ba4fb743aabc1a34c3cab32,
     type: 2}
   LaserObj: {fileID: 1195524495744418, guid: 5c92985ad495dda468c9d8f67d0c615c, type: 2}
   LaserDuration: 0.1
