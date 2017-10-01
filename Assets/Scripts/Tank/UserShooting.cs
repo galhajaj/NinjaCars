@@ -28,6 +28,11 @@ public class UserShooting : NetworkBehaviour
             RaycastHit2D hit = Physics2D.Raycast(shootPosition, shootDir);
             if (hit.collider != null)
             {
+                if (hit.collider.tag == "Player")
+                {
+                    CmdDestroyPlayer(hit.collider.gameObject);
+                }
+
                 CmdHitWithShoorikan(this.transform.position, hit.point);
             }
         }
@@ -36,18 +41,17 @@ public class UserShooting : NetworkBehaviour
     [Command]
     private void CmdHitWithShoorikan(Vector2 origin, Vector2 destination)
     {
-        /*GameObject laser = Instantiate(LaserObj, origin, Quaternion.identity) as GameObject;
-        LineRenderer line = laser.GetComponent<LineRenderer>();
-        line.SetPosition(0, origin);
-        line.SetPosition(1, destination);
-        Destroy(line, LaserDuration);
-        NetworkServer.Spawn(laser);*/
-
         GameObject shoorikan = Instantiate(ShoorikanObj, destination, Quaternion.identity) as GameObject;
         shoorikan.transform.Rotate(Vector3.forward * Random.Range(0.0F, 360.0F), Space.World);
         NetworkServer.Spawn(shoorikan);
 
         RpcDoOnClient(origin, destination);
+    }
+
+    [Command]
+    private void CmdDestroyPlayer(GameObject player)
+    {
+        NetworkServer.Destroy(player);
     }
 
     [ClientRpc]
@@ -58,6 +62,5 @@ public class UserShooting : NetworkBehaviour
         line.SetPosition(0, origin);
         line.SetPosition(1, destination);
         Destroy(line, LaserDuration);
-        //NetworkServer.Spawn(laser);
     }
 }
