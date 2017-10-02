@@ -22,6 +22,7 @@ public class LevelGenerator : MonoBehaviour {
 
     void Awake()
     {
+        Random.InitState(25); // in the meantime to make the world the same in server & client
         GeneratePortals();
         GenerateFence();
         GenerateWalls();
@@ -32,8 +33,7 @@ public class LevelGenerator : MonoBehaviour {
 	void Start ()
     {
         
-		
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
