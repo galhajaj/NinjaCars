@@ -1,9 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Networking;
+using UnityEngine.Networking.NetworkSystem;
 using AssemblyCSharp;
 
-public class LevelGenerator : MonoBehaviour {
+public class LevelGenerator : NetworkBehaviour
+{
+    public Text MessagesTextForDebug;
 
     public int LEVEL_WIDTH = 50;
     public int LEVEL_HEIGHT = 50;
@@ -20,23 +25,42 @@ public class LevelGenerator : MonoBehaviour {
 
     private Color[,] _blocksMap;
 
-    void Awake()
+    [SyncVar]
+    private int _randomSharedSeed;
+
+    public override void OnStartServer()
     {
-        Random.InitState(25); // in the meantime to make the world the same in server & client
+        // generate random seed on server
+        _randomSharedSeed = Random.Range(0, int.MaxValue);
+
+        MessagesTextForDebug.text += "OnStartServer " + _randomSharedSeed.ToString() + "\n";
+    }
+
+    public override void OnStartClient()
+    {
+        MessagesTextForDebug.text += "OnStartClient " + _randomSharedSeed.ToString() + "\n";
+
+        // same seed for all = same level generated
+        Random.InitState(_randomSharedSeed); 
+
         GeneratePortals();
         GenerateFence();
         GenerateWalls();
         InstantiateBlocks();
     }
 
-	// Use this for initialization
-	void Start ()
+    void Awake()
+    {
+
+    }
+
+    void Start ()
     {
         
     }
 	
-	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 		
 	}
 
