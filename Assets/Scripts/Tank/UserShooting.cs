@@ -62,12 +62,37 @@ public class UserShooting : NetworkBehaviour
                 {
                     if (hit.collider.tag == "Player")
                     {
-                        CmdDestroyPlayer(hit.collider.gameObject);
+                        CmdUpdateScore(isServer);
+                        CmdRespawnEnemyAfterDeath(hit.collider.gameObject);
+                        //CmdDestroyPlayer(hit.collider.gameObject);
                     }
 
                     CmdThrowShoorikan(this.transform.position, hit.point);
                 }
             }
+        }
+    }
+
+    [Command]
+    private void CmdRespawnEnemyAfterDeath(GameObject player)
+    {
+        RpcRespawnEnemyAfterDeath(player);
+    }
+
+    [ClientRpc]
+    private void RpcRespawnEnemyAfterDeath(GameObject player)
+    {
+        NetworkStartPosition[] spawnPoints;
+        spawnPoints = FindObjectsOfType<NetworkStartPosition>();
+
+        Vector3 spawnPoint = Vector3.zero;
+        spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)].transform.position;
+        player.transform.position = spawnPoint;
+
+        // add extra skill
+        if (Players.Instance.GetLocal() == player)
+        {
+            SkillsBar.Instance.AddUniqueRandomChips(1);
         }
     }
 
@@ -85,6 +110,15 @@ public class UserShooting : NetworkBehaviour
             _timeToAddAmmo = AmmoRegenerationRate;
             AmmoCount++;
         }
+    }
+
+    [Command]
+    private void CmdUpdateScore(bool isAddForHost)
+    {
+        if (isAddForHost)
+            MatchParams.Instance.HostPlayerScore++;
+        else
+            MatchParams.Instance.VisitorPlayerScore++;
     }
 
     [Command]

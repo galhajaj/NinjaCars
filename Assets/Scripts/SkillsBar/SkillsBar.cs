@@ -41,7 +41,7 @@ public class SkillsBar : MonoBehaviour
 
     }
     // =====================================================================================================
-    private void AddUniqueRandomChips(int amount)
+    public void AddUniqueRandomChips(int amount)
     {
         for (int i = 0; i < amount; ++i)
         {
@@ -65,6 +65,12 @@ public class SkillsBar : MonoBehaviour
     // =====================================================================================================
     private void createUniqueRandomChip(Transform socket)
     {
+        if (_allChips.Count == 0)
+        {
+            Debug.LogError("No More Unique Chips...");
+            return;
+        }
+
         int randomChipIndex = UnityEngine.Random.Range(0, _allChips.Count);
         GameObject newChip = Instantiate(_allChips[randomChipIndex] as GameObject);
         _allChips.RemoveAt(randomChipIndex);
