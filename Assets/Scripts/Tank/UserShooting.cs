@@ -5,6 +5,14 @@ using UnityEngine.Networking;
 
 public class UserShooting : NetworkBehaviour
 {
+    public int ClipMaxSize = 10;
+    private int _clipSize;
+    public float AmmoRegenerationRate = 1.25F;
+    private float _timeToAddAmmo;
+    public float FireRate = 0.2F;
+    private float _timeToShoot;
+    public float ShootXDirError = 0.25F;
+    public float ShootYDirError = 0.25F;
     public GameObject ShoorikanObj;
     public GameObject LaserObj;
     public float LaserDuration = 0.1F;
@@ -15,6 +23,9 @@ public class UserShooting : NetworkBehaviour
     void Start ()
     {
         _audioSource = this.GetComponent<AudioSource>();
+        _clipSize = ClipMaxSize;
+        _timeToAddAmmo = AmmoRegenerationRate;
+        _timeToShoot = 0.0F;
     }
 	
 	void Update ()
@@ -22,23 +33,59 @@ public class UserShooting : NetworkBehaviour
         if (!isLocalPlayer)
             return;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        fireInput();
+        ammoRegenration();
+    }
+
+    private void fireInput()
+    {
+        if (_timeToShoot > 0.0F)
+            _timeToShoot -= Time.deltaTime;
+
+        if (_clipSize <= 0)
+            return;
+
+        if (Input.GetKey(KeyCode.Space))
         {
-            Vector3 shootDir = Quaternion.AngleAxis(90.0F, Vector3.forward) * this.transform.right;
-            Vector3 shootPosition = this.transform.position + ShootDistanceFromTank * shootDir;
-
-            RaycastHit2D hit = Physics2D.Raycast(shootPosition, shootDir);
-            if (hit.collider != null)
+            if (_timeToShoot <= 0.0F)
             {
-                if (hit.collider.tag == "Player")
-                {
-                    CmdDestroyPlayer(hit.collider.gameObject);
-                }
+                _clipSize--;
+                _timeToShoot = FireRate;
 
-                CmdThrowShoorikan(this.transform.position, hit.point);
+                Vector3 shootDir = Quaternion.AngleAxis(90.0F, Vector3.forward) * this.transform.right;
+                Vector3 errorToShootDir = new Vector3(Random.Range(-ShootXDirError, ShootXDirError), Random.Range(-ShootYDirError, ShootYDirError));
+                shootDir += errorToShootDir;
+                Vector3 shootPosition = this.transform.position + ShootDistanceFromTank * shootDir;
+
+                RaycastHit2D hit = Physics2D.Raycast(shootPosition, shootDir);
+                if (hit.collider != null)
+                {
+                    if (hit.collider.tag == "Player")
+                    {
+                        CmdDestroyPlayer(hit.collider.gameObject);
+                    }
+
+                    CmdThrowShoorikan(this.transform.position, hit.point);
+                }
             }
         }
-	}
+    }
+
+    private void ammoRegenration()
+    {
+        if (_clipSize >= ClipMaxSize)
+        {
+            _clipSize = ClipMaxSize;
+            return;
+        }
+
+        _timeToAddAmmo -= Time.deltaTime;
+        if (_timeToAddAmmo <= 0.0F)
+        {
+            _timeToAddAmmo = AmmoRegenerationRate;
+            _clipSize++;
+        }
+    }
 
     [Command]
     private void CmdThrowShoorikan(Vector2 origin, Vector2 destination)

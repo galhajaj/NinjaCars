@@ -48,11 +48,11 @@ TagManager:
   - name: BackgroundSortingLayer
     uniqueID: 1166434881
     locked: 0
-  - name: GroundUnitsSortingLayer
-    uniqueID: 1212310387
-    locked: 0
   - name: LaserSortingLayer
     uniqueID: 631939235
+    locked: 0
+  - name: GroundUnitsSortingLayer
+    uniqueID: 1212310387
     locked: 0
   - name: ShoorikanSortingLayer
     uniqueID: 552322121
