@@ -27,7 +27,6 @@ GameObject:
   - component: {fileID: 114244583633966456}
   - component: {fileID: 114841102568529422}
   - component: {fileID: 114597352289054064}
-  - component: {fileID: 114202706603824950}
   - component: {fileID: 114467604495892688}
   - component: {fileID: 114871112910005614}
   - component: {fileID: 212905045736507260}
@@ -197,19 +196,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114202706603824950
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1638830676153494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86520aa6bf3ec1c4cb9c45196b1c9d5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxLife: 5
-  Life: 3
 --- !u!114 &114244583633966456
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -221,7 +207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 177c71e2dd6ae984cb13f607c2f16d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LifeData: {fileID: 114202706603824950}
   PowerData: {fileID: 114467604495892688}
   MovementData: {fileID: 114841102568529422}
   AmmoData: {fileID: 114597352289054064}
@@ -237,9 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0166cb0f152a7f4d96016515eb41f38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxPower: 3
-  Power: 1
-  PowerRegenerationRate: 0.02
+  Power: 5
 --- !u!114 &114597352289054064
 MonoBehaviour:
   m_ObjectHideFlags: 1

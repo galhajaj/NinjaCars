@@ -90,7 +90,7 @@ public class UserShooting : NetworkBehaviour
         player.transform.position = spawnPoint;
 
         // add extra skill
-        if (Players.Instance.GetLocal() == player)
+        if (Players.Instance.GetLocal().gameObject == player)
         {
             SkillsBar.Instance.AddUniqueRandomChips(1);
         }

@@ -76,6 +76,8 @@ public class SkillsBar : MonoBehaviour
         _allChips.RemoveAt(randomChipIndex);
         newChip.transform.position = socket.position;
         newChip.transform.parent = socket;
+
+        Debug.Log("Create chip " + newChip.name);
     }
 
     // =====================================================================================================

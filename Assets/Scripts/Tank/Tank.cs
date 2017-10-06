@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Tank : MonoBehaviour
 {
-    //public static Tank Instance;
-
-    public Damagable LifeData;
     public PowerUser PowerData;
     public UserMovement MovementData;
     public UserShooting AmmoData;
@@ -15,18 +12,7 @@ public class Tank : MonoBehaviour
 
     void Awake()
     {
-        /*if (Instance == null)
-        {
-            //DontDestroyOnLoad(gameObject);
-            Instance = this;
-        }
-        else
-        {
-            if (Instance != this)
-            {
-                Destroy(gameObject);
-            }
-        }*/
+
     }
 
     void Start ()

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 
 public class MatchParams : NetworkBehaviour
@@ -37,7 +38,7 @@ public class MatchParams : NetworkBehaviour
 		if (HostPlayerScore >= _numberOfRoundsToWin || VisitorPlayerScore >= _numberOfRoundsToWin)
         {
             Debug.Log("WIN!!!!!!");
-            // TODO: add what happen at the end
+            SceneManager.LoadScene("mainScene");
         }
 	}
 }
