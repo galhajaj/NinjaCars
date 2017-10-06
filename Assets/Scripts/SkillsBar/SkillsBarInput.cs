@@ -37,10 +37,10 @@ public class SkillsBarInput : MonoBehaviour
                 chipScript.ExecuteStart();
             }
 
-            if (Input.GetKey((KeyCode)i))
+            /*if (Input.GetKey((KeyCode)i))
             {
                 chipScript.ExecuteContinues();
-            }
+            }*/
 
             if (Input.GetKeyUp((KeyCode)i))
             {

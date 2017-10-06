@@ -80,7 +80,7 @@ public abstract class Chip : MonoBehaviour
     }
     protected virtual void executeStart() { }
     // =====================================================================================================
-    public void ExecuteContinues()
+    /*public void ExecuteContinues()
     {
         if (!_isExecuted)
             return;
@@ -94,7 +94,7 @@ public abstract class Chip : MonoBehaviour
         Players.Instance.GetLocal().PowerData.Power -= calculatedCost;
         executeContinues();
     }
-    protected virtual void executeContinues() { }
+    protected virtual void executeContinues() { }*/
     // =====================================================================================================
     public void ExecuteEnd()
     {

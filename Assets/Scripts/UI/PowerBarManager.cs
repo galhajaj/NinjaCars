@@ -25,32 +25,18 @@ public class PowerBarManager : MonoBehaviour
             return;
 
         // update bar numbers
-        while (_powerUnitsList.Count <  Players.Instance.GetLocal().PowerData.MaxPower)
+        while (_powerUnitsList.Count <  Players.Instance.GetLocal().PowerData.Power)
         {
             GameObject powerUnit = Instantiate(BarUnitObject);
             powerUnit.transform.SetParent(this.transform, false);
             _powerUnitsList.Add(powerUnit);
         }
-        while (_powerUnitsList.Count > Players.Instance.GetLocal().LifeData.MaxLife)
+        while (_powerUnitsList.Count > Players.Instance.GetLocal().PowerData.Power)
         {
             GameObject powerUnit = _powerUnitsList[_powerUnitsList.Count - 1];
             powerUnit.transform.SetParent(null);
             _powerUnitsList.Remove(powerUnit);
             DestroyImmediate(powerUnit);
-        }
-
-        // fill bars
-        for (int i = 0; i < _powerUnitsList.Count; ++i)
-        {
-            float ratio = 0.0F;
-
-            if (Mathf.FloorToInt(Players.Instance.GetLocal().PowerData.Power) > i)
-                ratio = 1.0F;
-            else if (Mathf.FloorToInt(Players.Instance.GetLocal().PowerData.Power) == i)
-                ratio = Players.Instance.GetLocal().PowerData.Power - Mathf.FloorToInt(Players.Instance.GetLocal().PowerData.Power);
-
-            _powerUnitsList[i].transform.Find("Fill").transform.localScale = new Vector3(ratio, 1.0F, 1.0F);
-
         }
     }
 }

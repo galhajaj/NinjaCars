@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class PowerUser : MonoBehaviour
 {
-    public int MaxPower = 3;
-    public float Power = 1;
-    public float PowerRegenerationRate = 0.02F; // 1/sec
+    public int Power = 5;
+    //public float PowerRegenerationRate = 0.02F; // 1/sec
 
     void Start()
     {
@@ -15,14 +14,14 @@ public class PowerUser : MonoBehaviour
 
     void Update()
     {
-        powerRegeneration();
+        //powerRegeneration();
     }
 
-    private void powerRegeneration()
+    /*private void powerRegeneration()
     {
         if (Power < MaxPower)
             Power += Time.deltaTime * PowerRegenerationRate;
         else
             Power = MaxPower;
-    }
+    }*/
 }

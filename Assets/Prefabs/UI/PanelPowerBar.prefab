@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f2012ffd2dc13d48880e3cede7b7a42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BarUnitObject: {fileID: 1328228791636622, guid: bcb17343f12e08b4b9b8cd340f33a76c,
+  BarUnitObject: {fileID: 1122566783860988, guid: 4f10c01f5f4244547b96fd54e68399e1,
     type: 2}
 --- !u!222 &222678581368809834
 CanvasRenderer:
