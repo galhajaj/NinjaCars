@@ -6,11 +6,11 @@ public class ChipSpeed : Chip
 {
     protected override void executeStart()
     {
-        LocalPlayer.Instance.Get().MovementData.Thrust *= 2;
+        Players.Instance.GetLocal().MovementData.Thrust *= 2;
     }
 
     protected override void executeEnd()
     {
-        LocalPlayer.Instance.Get().MovementData.Thrust /= 2;
+        Players.Instance.GetLocal().MovementData.Thrust /= 2;
     }
 }

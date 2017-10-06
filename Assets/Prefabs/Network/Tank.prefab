@@ -224,6 +224,7 @@ MonoBehaviour:
   LifeData: {fileID: 114202706603824950}
   PowerData: {fileID: 114467604495892688}
   MovementData: {fileID: 114841102568529422}
+  AmmoData: {fileID: 114597352289054064}
   IsActive: 1
 --- !u!114 &114467604495892688
 MonoBehaviour:
@@ -251,6 +252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ClipMaxSize: 10
+  AmmoCount: 0
   AmmoRegenerationRate: 1.25
   FireRate: 0.1
   ShootXDirError: 0.05

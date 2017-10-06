@@ -6,7 +6,7 @@ public class ChipTeleport : Chip
 {
     protected override void executeStart()
     {
-        GameObject tankObj = LocalPlayer.Instance.Get().gameObject;
+        GameObject tankObj = Players.Instance.GetLocal().gameObject;
         tankObj.transform.position = new Vector3(
             Camera.main.ScreenToWorldPoint(Input.mousePosition).x,
             Camera.main.ScreenToWorldPoint(Input.mousePosition).y,

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class LocalPlayer : MonoBehaviour
+public class Players : MonoBehaviour
 {
-    public static LocalPlayer Instance;
+    public static Players Instance;
 
     void Awake()
     {
@@ -33,11 +33,24 @@ public class LocalPlayer : MonoBehaviour
 		
 	}
 
-    public Tank Get()
+    public Tank GetLocal()
     {
         foreach (GameObject cur in GameObject.FindGameObjectsWithTag("Player"))
         {
             if (cur.GetComponent<NetworkIdentity>().isLocalPlayer)
+            {
+                return cur.GetComponent<Tank>();
+            }
+        }
+
+        return null;
+    }
+
+    public Tank GetEnemy()
+    {
+        foreach (GameObject cur in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            if (!cur.GetComponent<NetworkIdentity>().isLocalPlayer)
             {
                 return cur.GetComponent<Tank>();
             }

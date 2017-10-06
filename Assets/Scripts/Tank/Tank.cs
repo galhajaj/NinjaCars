@@ -9,6 +9,7 @@ public class Tank : MonoBehaviour
     public Damagable LifeData;
     public PowerUser PowerData;
     public UserMovement MovementData;
+    public UserShooting AmmoData;
 
     public bool IsActive = true;
 

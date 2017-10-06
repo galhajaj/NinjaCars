@@ -73,9 +73,9 @@ public abstract class Chip : MonoBehaviour
             return;
 
         _isExecuted = true;
-        if (LocalPlayer.Instance.Get().PowerData.Power < Cost)
+        if (Players.Instance.GetLocal().PowerData.Power < Cost)
             return;
-        LocalPlayer.Instance.Get().PowerData.Power -= Cost;
+        Players.Instance.GetLocal().PowerData.Power -= Cost;
         executeStart();
     }
     protected virtual void executeStart() { }
@@ -86,12 +86,12 @@ public abstract class Chip : MonoBehaviour
             return;
 
         float calculatedCost = Time.deltaTime * CostPerSecond;
-        if (LocalPlayer.Instance.Get().PowerData.Power < calculatedCost)
+        if (Players.Instance.GetLocal().PowerData.Power < calculatedCost)
         {
             ExecuteEnd();
             return;
         }
-        LocalPlayer.Instance.Get().PowerData.Power -= calculatedCost;
+        Players.Instance.GetLocal().PowerData.Power -= calculatedCost;
         executeContinues();
     }
     protected virtual void executeContinues() { }

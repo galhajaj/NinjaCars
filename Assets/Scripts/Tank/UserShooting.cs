@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 public class UserShooting : NetworkBehaviour
 {
     public int ClipMaxSize = 10;
-    private int _clipSize;
+    public int AmmoCount;
     public float AmmoRegenerationRate = 1.25F;
     private float _timeToAddAmmo;
     public float FireRate = 0.2F;
@@ -23,7 +23,7 @@ public class UserShooting : NetworkBehaviour
     void Start ()
     {
         _audioSource = this.GetComponent<AudioSource>();
-        _clipSize = ClipMaxSize;
+        AmmoCount = ClipMaxSize;
         _timeToAddAmmo = AmmoRegenerationRate;
         _timeToShoot = 0.0F;
     }
@@ -42,14 +42,14 @@ public class UserShooting : NetworkBehaviour
         if (_timeToShoot > 0.0F)
             _timeToShoot -= Time.deltaTime;
 
-        if (_clipSize <= 0)
+        if (AmmoCount <= 0)
             return;
 
         if (Input.GetKey(KeyCode.Space))
         {
             if (_timeToShoot <= 0.0F)
             {
-                _clipSize--;
+                AmmoCount--;
                 _timeToShoot = FireRate;
 
                 Vector3 shootDir = Quaternion.AngleAxis(90.0F, Vector3.forward) * this.transform.right;
@@ -73,9 +73,9 @@ public class UserShooting : NetworkBehaviour
 
     private void ammoRegenration()
     {
-        if (_clipSize >= ClipMaxSize)
+        if (AmmoCount >= ClipMaxSize)
         {
-            _clipSize = ClipMaxSize;
+            AmmoCount = ClipMaxSize;
             return;
         }
 
@@ -83,7 +83,7 @@ public class UserShooting : NetworkBehaviour
         if (_timeToAddAmmo <= 0.0F)
         {
             _timeToAddAmmo = AmmoRegenerationRate;
-            _clipSize++;
+            AmmoCount++;
         }
     }
 
