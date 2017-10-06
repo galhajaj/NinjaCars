@@ -18,7 +18,7 @@ public class CameraFollow : MonoBehaviour
     void LateUpdate () 
 	{
         if (_target == null)
-            _target = LocalPlayer.Instance.Get().gameObject;
+            _target = Players.Instance.GetLocal().gameObject;
 
         if (_target == null)
             return;
