@@ -417,8 +417,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   JadeObj: {fileID: 1670237418271620, guid: ea42b622b8f5d8e4c8ddd1182b5c6dbb, type: 2}
-  TimeIntervalToCreate: 10
+  TimeIntervalToCreate: 5
   SquareAreaToCreateIn: 5
+  NumberOfJadesAllowedToExist: 10
 --- !u!1 &828660752
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,7 +681,7 @@ Prefab:
     - target: {fileID: 224091617123156286, guid: 912706055c763c340b20266fb4f67402,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 224091617123156286, guid: 912706055c763c340b20266fb4f67402,
         type: 2}
@@ -1063,7 +1064,7 @@ Prefab:
     - target: {fileID: 224075017181784944, guid: 30d4bff4030801449b17b60141a4a043,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 224075017181784944, guid: 30d4bff4030801449b17b60141a4a043,
         type: 2}

@@ -57,7 +57,13 @@ public class UserShooting : NetworkBehaviour
                 shootDir += errorToShootDir;
                 Vector3 shootPosition = this.transform.position + ShootDistanceFromTank * shootDir;
 
-                RaycastHit2D hit = Physics2D.Raycast(shootPosition, shootDir);
+                // layers to ignore
+                int layerMask = (1 << LayerMask.NameToLayer("JadeLayer"));
+                //layerMask |= (1 << 13);
+                //layerMask |= (1 << 15);
+                layerMask = ~layerMask;
+
+                RaycastHit2D hit = Physics2D.Raycast(shootPosition, shootDir, 1000.0F, layerMask);
                 if (hit.collider != null)
                 {
                     if (hit.collider.tag == "Player")

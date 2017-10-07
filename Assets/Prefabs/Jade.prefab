@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212305913483093006}
   - component: {fileID: 58466647063054830}
   - component: {fileID: 114785344035984330}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Jade
   m_TagString: JadeTag
   m_Icon: {fileID: 0}

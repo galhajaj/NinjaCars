@@ -9,6 +9,7 @@ public class JadeGenerator : NetworkBehaviour
     public float TimeIntervalToCreate = 10.0F;
     private float _timeToCreate;
     public float SquareAreaToCreateIn = 5.0F;
+    public int NumberOfJadesAllowedToExist = 10;
 
 	void Start ()
     {
@@ -17,7 +18,7 @@ public class JadeGenerator : NetworkBehaviour
 	
 	void Update ()
     {
-        if (GameObject.FindGameObjectsWithTag("JadeTag").Length > 0)
+        if (GameObject.FindGameObjectsWithTag("JadeTag").Length >= NumberOfJadesAllowedToExist)
             return;
 
         _timeToCreate -= Time.deltaTime;
