@@ -8,6 +8,7 @@ TagManager:
   - InventorySocketTag
   - TurretSocketTag
   - SkillSocketTag
+  - JadeTag
   layers:
   - Default
   - TransparentFX

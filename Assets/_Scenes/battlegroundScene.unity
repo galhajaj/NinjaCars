@@ -315,6 +315,7 @@ GameObject:
   - component: {fileID: 636753930}
   - component: {fileID: 636753931}
   - component: {fileID: 636753934}
+  - component: {fileID: 636753935}
   - component: {fileID: 636753933}
   m_Layer: 0
   m_Name: Manager
@@ -404,6 +405,20 @@ MonoBehaviour:
   NumberOfRounds: 5
   HostPlayerScore: 0
   VisitorPlayerScore: 0
+--- !u!114 &636753935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 636753929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a869b829f5a9d9f45b59d2a80ce7657f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  JadeObj: {fileID: 1670237418271620, guid: ea42b622b8f5d8e4c8ddd1182b5c6dbb, type: 2}
+  TimeIntervalToCreate: 10
+  SquareAreaToCreateIn: 5
 --- !u!1 &828660752
 GameObject:
   m_ObjectHideFlags: 0
