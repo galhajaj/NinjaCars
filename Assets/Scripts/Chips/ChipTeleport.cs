@@ -7,6 +7,7 @@ public class ChipTeleport : Chip
     public GameObject TeleportMarkObj;
     private bool _isMarkPlaced = false;
     private Vector2 _positionToTeleportTo;
+    public int CostAfterTeleportMarkPlacement = 2;
 
     protected override void executeStart()
     {
@@ -15,7 +16,7 @@ public class ChipTeleport : Chip
             GameObject teleportMark = Instantiate(TeleportMarkObj, Players.Instance.GetLocal().transform.position, Quaternion.identity) as GameObject;
             _positionToTeleportTo = teleportMark.transform.position;
             _isMarkPlaced = true;
-            Cost = 1;
+            Cost = CostAfterTeleportMarkPlacement;
         }
         else
         {

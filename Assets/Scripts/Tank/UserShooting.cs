@@ -52,30 +52,35 @@ public class UserShooting : NetworkBehaviour
                 AmmoCount--;
                 _timeToShoot = FireRate;
 
-                Vector3 shootDir = Quaternion.AngleAxis(90.0F, Vector3.forward) * this.transform.right;
-                Vector3 errorToShootDir = new Vector3(Random.Range(-ShootXDirError, ShootXDirError), Random.Range(-ShootYDirError, ShootYDirError));
-                shootDir += errorToShootDir;
-                Vector3 shootPosition = this.transform.position + ShootDistanceFromTank * shootDir;
-
-                // layers to ignore
-                int layerMask = (1 << LayerMask.NameToLayer("JadeLayer"));
-                //layerMask |= (1 << 13);
-                //layerMask |= (1 << 15);
-                layerMask = ~layerMask;
-
-                RaycastHit2D hit = Physics2D.Raycast(shootPosition, shootDir, 1000.0F, layerMask);
-                if (hit.collider != null)
-                {
-                    if (hit.collider.tag == "Player")
-                    {
-                        CmdUpdateScore(isServer);
-                        CmdRespawnEnemyAfterDeath(hit.collider.gameObject);
-                        //CmdDestroyPlayer(hit.collider.gameObject);
-                    }
-
-                    CmdThrowShoorikan(this.transform.position, hit.point);
-                }
+                FireSingle();
             }
+        }
+    }
+
+    public void FireSingle()
+    {
+        Vector3 shootDir = Quaternion.AngleAxis(90.0F, Vector3.forward) * this.transform.right;
+        Vector3 errorToShootDir = new Vector3(Random.Range(-ShootXDirError, ShootXDirError), Random.Range(-ShootYDirError, ShootYDirError));
+        shootDir += errorToShootDir;
+        Vector3 shootPosition = this.transform.position + ShootDistanceFromTank * shootDir;
+
+        // layers to ignore
+        int layerMask = (1 << LayerMask.NameToLayer("JadeLayer"));
+        //layerMask |= (1 << 13);
+        //layerMask |= (1 << 15);
+        layerMask = ~layerMask;
+
+        RaycastHit2D hit = Physics2D.Raycast(shootPosition, shootDir, 1000.0F, layerMask);
+        if (hit.collider != null)
+        {
+            if (hit.collider.tag == "Player")
+            {
+                CmdUpdateScore(isServer);
+                CmdRespawnEnemyAfterDeath(hit.collider.gameObject);
+                //CmdDestroyPlayer(hit.collider.gameObject);
+            }
+
+            CmdThrowShoorikan(this.transform.position, hit.point);
         }
     }
 

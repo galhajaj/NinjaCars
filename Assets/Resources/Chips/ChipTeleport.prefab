@@ -83,6 +83,7 @@ MonoBehaviour:
   IconPic: {fileID: 21300000, guid: c41cd85e8fb156040a0d15e44ae03f02, type: 3}
   TeleportMarkObj: {fileID: 1617530887164104, guid: 415692c05cec0ee41aa159247b716c92,
     type: 2}
+  CostAfterTeleportMarkPlacement: 2
 --- !u!212 &212341352451042876
 SpriteRenderer:
   m_ObjectHideFlags: 1
