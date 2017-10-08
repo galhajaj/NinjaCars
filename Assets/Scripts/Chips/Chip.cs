@@ -16,7 +16,7 @@ public abstract class Chip : MonoBehaviour
     private bool _isExecuted = false;
 
     public int Cost = 0;
-    public float CostPerSecond = 0.0F;
+    //public float CostPerSecond = 0.0F;
 
     public Sprite IconPic;
     private GameObject _iconObject;

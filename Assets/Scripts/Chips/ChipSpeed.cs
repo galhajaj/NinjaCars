@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class ChipSpeed : Chip
 {
+    public float Thrust = 600.0F;
+
     protected override void executeStart()
     {
-        Players.Instance.GetLocal().MovementData.Thrust *= 2;
+        Rigidbody2D rigidBody = Players.Instance.GetLocal().GetComponent<Rigidbody2D>();
+        rigidBody.AddForce(rigidBody.transform.up * Thrust);
+        //Players.Instance.GetLocal().MovementData.Thrust *= 2;
     }
 
     protected override void executeEnd()
     {
-        Players.Instance.GetLocal().MovementData.Thrust /= 2;
+        //Players.Instance.GetLocal().MovementData.Thrust /= 2;
     }
 }

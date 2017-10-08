@@ -78,14 +78,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d19b553540ce404a855a1d5f5348df4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 0
-  ChipID: 0
-  GridName: 
-  SocketName: 
-  Cost: 1
-  CostPerSecond: 0
+  Type: 1
+  Cost: 0
   IconPic: {fileID: 21300000, guid: c41cd85e8fb156040a0d15e44ae03f02, type: 3}
-  TurretObject: {fileID: 0}
+  TeleportMarkObj: {fileID: 1617530887164104, guid: 415692c05cec0ee41aa159247b716c92,
+    type: 2}
 --- !u!212 &212341352451042876
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -116,7 +113,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1410540117
-  m_SortingLayer: 6
+  m_SortingLayer: 9
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8405526534a82954bb1e60eb2414331f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
