@@ -4,5 +4,9 @@ using UnityEngine;
 
 public class ChipDefense : Chip
 {
-
+    protected override void executeStart()
+    {
+        Tank tankScript = Players.Instance.GetLocal();
+        tankScript.CmdAddShield();
+    }
 }

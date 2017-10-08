@@ -78,14 +78,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9584551eff16644babbd43b74a16edb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 0
-  ChipID: 0
-  GridName: 
-  SocketName: 
-  Cost: 0
-  CostPerSecond: 0
+  Type: 1
+  Cost: 3
   IconPic: {fileID: 21300000, guid: d7ce4d53f62641344bab3e25bca73cb2, type: 3}
-  TurretObject: {fileID: 0}
 --- !u!212 &212394645826543454
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -116,7 +111,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1410540117
-  m_SortingLayer: 6
+  m_SortingLayer: 10
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8405526534a82954bb1e60eb2414331f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

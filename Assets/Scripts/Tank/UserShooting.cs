@@ -75,13 +75,38 @@ public class UserShooting : NetworkBehaviour
         {
             if (hit.collider.tag == "Player")
             {
-                CmdUpdateScore(isServer);
-                CmdRespawnEnemyAfterDeath(hit.collider.gameObject);
-                //CmdDestroyPlayer(hit.collider.gameObject);
+                if (hit.collider.transform.childCount <= 0) // if has no shield - destroy player
+                {
+                    CmdUpdateScore(isServer);
+                    CmdRespawnEnemyAfterDeath(hit.collider.gameObject);
+                    //CmdDestroyPlayer(hit.collider.gameObject);
+                }
+                else // else - remove one shield
+                {
+                    CmdRemoveShield(hit.collider.gameObject);
+                }
             }
 
             CmdThrowShoorikan(this.transform.position, hit.point);
         }
+    }
+
+    [Command]
+    public void CmdRemoveShield(GameObject obj)
+    {
+        RpcRemoveShieldOnClient(obj);
+    }
+
+    [ClientRpc]
+    private void RpcRemoveShieldOnClient(GameObject obj)
+    {
+        int shieldCount = obj.transform.childCount;
+        if (shieldCount <= 0)
+            return;
+
+        Transform shieldToRemove = obj.transform.GetChild(shieldCount - 1);
+        shieldToRemove.transform.SetParent(null);
+        Destroy(shieldToRemove.gameObject);
     }
 
     [Command]
