@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class Chip : MonoBehaviour
 {
@@ -29,26 +30,13 @@ public abstract class Chip : MonoBehaviour
 
     void Start()
     {
+        this.transform.Find("Icon").GetComponent<Image>().sprite = IconPic;
         changeColorByType();
-        addIconChildObject();
     }
 	
 	void Update()
     {
 
-    }
-
-    private void addIconChildObject()
-    {
-        _iconObject = new GameObject();
-        _iconObject.name = "Icon";
-        _iconSpriteRenderer = _iconObject.AddComponent<SpriteRenderer>();
-        _iconSpriteRenderer.sprite = IconPic;
-        _iconSpriteRenderer.sortingLayerName = "ChipsSortingLayer";
-        _iconSpriteRenderer.sortingOrder = 1; // the chip body is 0, need to be in front of it
-        _iconSpriteRenderer.color = Color.black;
-        _iconObject.transform.position = this.transform.position;
-        _iconObject.transform.parent = this.transform;
     }
 
     private void changeColorByType()

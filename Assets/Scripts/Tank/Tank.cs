@@ -56,4 +56,24 @@ public class Tank : NetworkBehaviour
         shield.transform.localScale = new Vector3(newScale, newScale);
         shield.transform.SetParent(this.transform);
     }
+
+    // ########################### TODO: try to put those functions here instead of inside UserShooting
+    [Command]
+    public void CmdRemoveShield(GameObject obj)
+    {
+        RpcRemoveShieldOnClient(obj);
+    }
+
+    [ClientRpc]
+    private void RpcRemoveShieldOnClient(GameObject obj)
+    {
+        int shieldCount = obj.transform.childCount;
+        if (shieldCount <= 0)
+            return;
+
+        Transform shieldToRemove = obj.transform.GetChild(shieldCount - 1);
+        shieldToRemove.transform.SetParent(null);
+        Destroy(shieldToRemove.gameObject);
+    }
+    // ###########################
 }

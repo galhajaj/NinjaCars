@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkillsBar : MonoBehaviour
+public class SkillBarManager : MonoBehaviour
 {
-    public static SkillsBar Instance;
+    public static SkillBarManager Instance;
 
     public int NumberOfChipsAtStart = 3;
 
     private List<UnityEngine.Object> _allChips = new List<UnityEngine.Object>();
+    private List<GameObject> _skillUnitsList = new List<GameObject>();
 
     void Awake()
     {
@@ -38,32 +38,18 @@ public class SkillsBar : MonoBehaviour
 
     void Update()
     {
-
+        updateSkillActivationInput();
     }
     // =====================================================================================================
     public void AddUniqueRandomChips(int amount)
     {
         for (int i = 0; i < amount; ++i)
         {
-            Transform nextFreeSocket = getNextFreeSocket();
-            createUniqueRandomChip(nextFreeSocket);
+            createUniqueRandomChip();
         }
     }
     // =====================================================================================================
-    private Transform getNextFreeSocket()
-    {
-        foreach (Transform tile in this.transform)
-        {
-            if (tile.childCount == 0)
-            {
-                return tile;
-            }
-        }
-
-        return null;
-    }
-    // =====================================================================================================
-    private void createUniqueRandomChip(Transform socket)
+    private void createUniqueRandomChip()
     {
         if (_allChips.Count == 0)
         {
@@ -74,11 +60,37 @@ public class SkillsBar : MonoBehaviour
         int randomChipIndex = UnityEngine.Random.Range(0, _allChips.Count);
         GameObject newChip = Instantiate(_allChips[randomChipIndex] as GameObject);
         _allChips.RemoveAt(randomChipIndex);
-        newChip.transform.position = socket.position;
-        newChip.transform.parent = socket;
+
+        newChip.transform.SetParent(this.transform, false);
+        _skillUnitsList.Add(newChip);
 
         Debug.Log("Create chip " + newChip.name);
     }
 
     // =====================================================================================================
+    private void updateSkillActivationInput()
+    {
+        // skills (1 - 5)
+        for (int i = 49, j = 0; i <= 53; ++i, ++j)
+        {
+            Chip chipScript = _skillUnitsList[j].GetComponent<Chip>();
+
+            if (Input.GetKeyDown((KeyCode)i))
+            {
+                chipScript.ExecuteStart();
+            }
+
+            /*if (Input.GetKey((KeyCode)i))
+            {
+                chipScript.ExecuteContinues();
+            }*/
+
+            if (Input.GetKeyUp((KeyCode)i))
+            {
+                chipScript.ExecuteEnd();
+            }
+        }
+    }
+    // =====================================================================================================
 }
+

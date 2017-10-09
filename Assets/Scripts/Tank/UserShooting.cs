@@ -128,7 +128,7 @@ public class UserShooting : NetworkBehaviour
         // add extra skill
         if (Players.Instance.GetLocal().gameObject == player)
         {
-            SkillsBar.Instance.AddUniqueRandomChips(1);
+            SkillBarManager.Instance.AddUniqueRandomChips(1);
         }
     }
 
