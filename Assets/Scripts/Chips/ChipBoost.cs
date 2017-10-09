@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChipSpeed : Chip
+public class ChipBoost : Chip
 {
     public float Thrust = 600.0F;
 

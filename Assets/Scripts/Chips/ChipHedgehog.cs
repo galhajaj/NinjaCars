@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChipBurst : Chip
+public class ChipHedgehog : Chip
 {
     public int AmmoBurstCount = 50;
     public float ErrorX = 10.0F;
