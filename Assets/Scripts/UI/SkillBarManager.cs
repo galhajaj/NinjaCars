@@ -71,7 +71,7 @@ public class SkillBarManager : MonoBehaviour
     private void updateSkillActivationInput()
     {
         // skills (1 - 5)
-        for (int i = 49, j = 0; i <= 53; ++i, ++j)
+        for (int i = 49, j = 0; i <= 53 && j < _skillUnitsList.Count; ++i, ++j)
         {
             Chip chipScript = _skillUnitsList[j].GetComponent<Chip>();
 

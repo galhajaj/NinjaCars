@@ -19,9 +19,16 @@ public abstract class Chip : MonoBehaviour
     public int Cost = 0;
     //public float CostPerSecond = 0.0F;
 
+    public float CooldownTime = 1.0F;
+    private float _currentCooldownTime = 0.0F;
+
     public Sprite IconPic;
-    private GameObject _iconObject;
-    private SpriteRenderer _iconSpriteRenderer;
+    //private GameObject _iconObject;
+    //private SpriteRenderer _iconSpriteRenderer;
+    private Transform _fillTransform;
+    private Image _fillImage;
+
+    private Color _NonActiveColor = new Color(0.15F, 0.15F, 0.15F);
 
     void Awake()
     {
@@ -30,24 +37,31 @@ public abstract class Chip : MonoBehaviour
 
     void Start()
     {
+        _fillTransform = this.transform.Find("Fill");
+        _fillImage = _fillTransform.GetComponent<Image>();
         this.transform.Find("Icon").GetComponent<Image>().sprite = IconPic;
         changeColorByType();
     }
 	
 	void Update()
     {
+        if (_currentCooldownTime > 0.0F)
+            _currentCooldownTime -= Time.deltaTime;
+        /*if (_currentCooldownTime < 0.0F)
+            _currentCooldownTime = 0.0F;*/
 
+        updateCooldownUI();
     }
 
     private void changeColorByType()
     {
         if (Type == ChipType.PASSIVE)
         {
-            this.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+            _fillTransform.GetComponent<Image>().color = Color.grey;
         }
         else if (Type == ChipType.ACTIVE)
         {
-            this.gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+            _fillTransform.GetComponent<Image>().color = Color.green;
         }
     }
 
@@ -60,10 +74,15 @@ public abstract class Chip : MonoBehaviour
         if (_isExecuted)
             return;
 
+        if (_currentCooldownTime > 0.0F)
+            return;
+
         _isExecuted = true;
         if (Players.Instance.GetLocal().PowerData.Power < Cost)
             return;
+
         Players.Instance.GetLocal().PowerData.Power -= Cost;
+        _currentCooldownTime = CooldownTime;
         executeStart();
     }
     protected virtual void executeStart() { }
@@ -94,4 +113,24 @@ public abstract class Chip : MonoBehaviour
     }
     protected virtual void executeEnd() { }
     // =====================================================================================================
+    private void updateCooldownUI()
+    {
+        if (Type == ChipType.PASSIVE)
+            return;
+
+        float ratio = 1.0F - _currentCooldownTime / CooldownTime;
+        if (ratio > 1.0F)
+            ratio = 1.0F;
+
+        _fillTransform.localScale = new Vector3(1.0F, ratio);
+
+        if (_currentCooldownTime <= 0.0F && Players.Instance.GetLocal().PowerData.Power >= Cost)
+        {
+            _fillImage.color = Color.green;
+        }
+        else
+        {
+            _fillImage.color = _NonActiveColor;
+        }
+    }
 }

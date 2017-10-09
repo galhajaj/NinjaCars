@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 114339653278740902}
   - component: {fileID: 114398644843460150}
   m_Layer: 5
-  m_Name: SkillBurst
+  m_Name: SkillHedgehog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.98985803, g: 1, b: 0.2647059, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -120,7 +120,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 1
   Cost: 2
-  IconPic: {fileID: 21300000, guid: 243891cc01e293d4daf6e0665b1d316f, type: 3}
+  CooldownTime: 1
+  IconPic: {fileID: 21300000, guid: 336ccd70009878f489f1a3fe41d1bd3a, type: 3}
   AmmoBurstCount: 50
   ErrorX: 10
   ErrorY: 10
@@ -301,6 +302,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -31.99762, y: 0}
+  m_AnchoredPosition: {x: -31.99762, y: -31.997282}
   m_SizeDelta: {x: 64, y: 64}
-  m_Pivot: {x: -0.00000052160846, y: 0.5}
+  m_Pivot: {x: -0.00000052160846, y: 0}
