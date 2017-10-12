@@ -18,12 +18,12 @@ TagManager:
   - UI
   - 
   - 
-  - TankLayer
+  - 
   - ChipsLayer
   - SocketsLayer
   - JadeLayer
-  - 
-  - 
+  - TankLocalLayer
+  - TankRemoteLayer
   - 
   - 
   - 

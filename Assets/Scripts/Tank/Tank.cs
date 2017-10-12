@@ -19,7 +19,11 @@ public class Tank : NetworkBehaviour
 
     void Start ()
     {
-        
+        // change layer to local one
+        if (isLocalPlayer)
+        {
+            this.gameObject.layer = LayerMask.NameToLayer("TankLocalLayer");
+        }
     }
 	
 	void Update ()

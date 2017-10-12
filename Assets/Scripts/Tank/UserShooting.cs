@@ -16,7 +16,6 @@ public class UserShooting : NetworkBehaviour
     public GameObject ShoorikanObj;
     public GameObject LaserObj;
     public float LaserDuration = 0.1F;
-    public float ShootDistanceFromTank = 0.25F;
     public AudioClip ShootSound;
     private AudioSource _audioSource;
 
@@ -62,15 +61,13 @@ public class UserShooting : NetworkBehaviour
         Vector3 shootDir = Quaternion.AngleAxis(90.0F, Vector3.forward) * this.transform.right;
         Vector3 errorToShootDir = new Vector3(Random.Range(-ShootXDirError, ShootXDirError), Random.Range(-ShootYDirError, ShootYDirError));
         shootDir += errorToShootDir;
-        Vector3 shootPosition = this.transform.position + ShootDistanceFromTank * shootDir;
 
         // layers to ignore
         int layerMask = (1 << LayerMask.NameToLayer("JadeLayer"));
-        //layerMask |= (1 << 13);
-        //layerMask |= (1 << 15);
+        layerMask |= (1 << LayerMask.NameToLayer("TankLocalLayer"));
         layerMask = ~layerMask;
 
-        RaycastHit2D hit = Physics2D.Raycast(shootPosition, shootDir, 1000.0F, layerMask);
+        RaycastHit2D hit = Physics2D.Raycast(this.transform.position, shootDir, 1000.0F, layerMask);
         if (hit.collider != null)
         {
             if (hit.collider.tag == "Player")
