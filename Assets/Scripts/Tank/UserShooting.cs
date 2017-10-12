@@ -19,6 +19,9 @@ public class UserShooting : NetworkBehaviour
     public AudioClip ShootSound;
     private AudioSource _audioSource;
 
+    public float InvincibilityTime = 5.0F;
+    private float _invincibilityTimeRemaining = 0.0F;
+
     void Start ()
     {
         _audioSource = this.GetComponent<AudioSource>();
@@ -29,6 +32,9 @@ public class UserShooting : NetworkBehaviour
 	
 	void Update ()
     {
+        if (_invincibilityTimeRemaining > 0.0F)
+            _invincibilityTimeRemaining -= Time.deltaTime;
+
         if (!isLocalPlayer)
             return;
 
@@ -74,9 +80,13 @@ public class UserShooting : NetworkBehaviour
             {
                 if (hit.collider.transform.childCount <= 0) // if has no shield - destroy player
                 {
-                    CmdUpdateScore(isServer);
-                    CmdRespawnEnemyAfterDeath(hit.collider.gameObject);
-                    //CmdDestroyPlayer(hit.collider.gameObject);
+                    if (_invincibilityTimeRemaining <= 0.0F)
+                    {
+                        _invincibilityTimeRemaining = InvincibilityTime;
+                        CmdUpdateScore(isServer);
+                        CmdRespawnEnemyAfterDeath(hit.collider.gameObject);
+                        //CmdDestroyPlayer(hit.collider.gameObject);
+                    }
                 }
                 else // else - remove one shield
                 {
