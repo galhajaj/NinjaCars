@@ -84,6 +84,7 @@ public class UserShooting : NetworkBehaviour
                     {
                         _invincibilityTimeRemaining = InvincibilityTime;
                         CmdUpdateScore(isServer);
+                        //StartCoroutine(RespawnCoroutine(hit.collider.gameObject, InvincibilityTime - (InvincibilityTime / 3)));
                         CmdRespawnEnemyAfterDeath(hit.collider.gameObject);
                         //CmdDestroyPlayer(hit.collider.gameObject);
                     }
@@ -114,6 +115,12 @@ public class UserShooting : NetworkBehaviour
         Transform shieldToRemove = obj.transform.GetChild(shieldCount - 1);
         shieldToRemove.transform.SetParent(null);
         Destroy(shieldToRemove.gameObject);
+    }
+
+    IEnumerator RespawnCoroutine(GameObject player, float delayTime)
+    {
+        yield return new WaitForSeconds(delayTime);
+        CmdRespawnEnemyAfterDeath(player);
     }
 
     [Command]
