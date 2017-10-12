@@ -17,6 +17,7 @@ public class ChipTeleport : Chip
             _positionToTeleportTo = teleportMark.transform.position;
             _isMarkPlaced = true;
             Cost = CostAfterTeleportMarkPlacement;
+            updateCostGui();
         }
         else
         {

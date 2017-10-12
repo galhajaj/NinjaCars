@@ -12,6 +12,17 @@ public abstract class Chip : MonoBehaviour
         ACTIVE
     }
 
+    public GameObject FillChildObj;
+    public GameObject FrameChildObj;
+    public GameObject IconChildObj;
+    public GameObject CostChildObj;
+    private Transform _fillTransform;
+    private Image _fillImage;
+    private Transform _icon;
+    private Transform _frame;
+    private Transform _cost;
+    private Text _costText;
+
     public ChipType Type = ChipType.ACTIVE;
 
     private bool _isExecuted = false;
@@ -23,10 +34,6 @@ public abstract class Chip : MonoBehaviour
     private float _currentCooldownTime = 0.0F;
 
     public Sprite IconPic;
-    //private GameObject _iconObject;
-    //private SpriteRenderer _iconSpriteRenderer;
-    private Transform _fillTransform;
-    private Image _fillImage;
 
     private Color _NonActiveColor = new Color(0.15F, 0.15F, 0.15F);
 
@@ -37,9 +44,22 @@ public abstract class Chip : MonoBehaviour
 
     void Start()
     {
-        _fillTransform = this.transform.Find("Fill");
+        _fillTransform = Instantiate(FillChildObj).transform;
+        _fillTransform.SetParent(this.transform, false);
         _fillImage = _fillTransform.GetComponent<Image>();
-        this.transform.Find("Icon").GetComponent<Image>().sprite = IconPic;
+
+        _frame = Instantiate(FrameChildObj).transform;
+        _frame.SetParent(this.transform, false);
+
+        _icon = Instantiate(IconChildObj).transform;
+        _icon.SetParent(this.transform, false);
+        _icon.GetComponent<Image>().sprite = IconPic;
+
+        _cost = Instantiate(CostChildObj).transform;
+        _costText = _cost.Find("Text").GetComponent<Text>();
+        _costText.text = Cost.ToString();
+        _cost.SetParent(this.transform, false);
+
         changeColorByType();
     }
 	
@@ -53,15 +73,20 @@ public abstract class Chip : MonoBehaviour
         updateCooldownUI();
     }
 
+    protected void updateCostGui()
+    {
+        _costText.text = Cost.ToString();
+    }
+
     private void changeColorByType()
     {
         if (Type == ChipType.PASSIVE)
         {
-            _fillTransform.GetComponent<Image>().color = Color.grey;
+            _fillImage.color = Color.grey;
         }
         else if (Type == ChipType.ACTIVE)
         {
-            _fillTransform.GetComponent<Image>().color = Color.green;
+            _fillImage.color = Color.green;
         }
     }
 

@@ -1,10 +1,19 @@
 fileFormatVersion: 2
 guid: 5e63039c626d93e4e95f3a8bf33a6d90
-timeCreated: 1501830289
+timeCreated: 1507835199
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - FillChildObj: {fileID: 1021774116000740, guid: 09cd0a3b89cb14143bdf93fbf2e055b5,
+      type: 2}
+  - FrameChildObj: {fileID: 1518704098232658, guid: 18a3ef47681b6964bae2c5396e9e8a5a,
+      type: 2}
+  - IconChildObj: {fileID: 1088614841408644, guid: c345d51699f705b4eb18fc8c276a6a65,
+      type: 2}
+  - CostChildObj: {fileID: 1589642714096088, guid: 1e74a58afb3ad42479e3ea3020363175,
+      type: 2}
+  - IconPic: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
