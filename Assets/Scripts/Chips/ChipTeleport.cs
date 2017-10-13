@@ -8,6 +8,7 @@ public class ChipTeleport : Chip
     private bool _isMarkPlaced = false;
     private Vector2 _positionToTeleportTo;
     public int CostAfterTeleportMarkPlacement = 2;
+    public Sprite IconAfterCreation;
 
     protected override void executeStart()
     {
@@ -18,6 +19,7 @@ public class ChipTeleport : Chip
             _isMarkPlaced = true;
             Cost = CostAfterTeleportMarkPlacement;
             updateCostGui();
+            setIcon(IconAfterCreation);
         }
         else
         {

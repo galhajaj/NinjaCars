@@ -55,7 +55,7 @@ public abstract class Chip : MonoBehaviour
 
         _icon = Instantiate(IconChildObj).transform;
         _icon.SetParent(this.transform, false);
-        _icon.GetComponent<Image>().sprite = IconPic;
+        setIcon(IconPic);
 
         _cost = Instantiate(CostChildObj).transform;
         _costText = _cost.Find("Text").GetComponent<Text>();
@@ -78,6 +78,11 @@ public abstract class Chip : MonoBehaviour
     protected void updateCostGui()
     {
         _costText.text = Cost.ToString();
+    }
+
+    protected void setIcon(Sprite icon)
+    {
+        _icon.GetComponent<Image>().sprite = icon;
     }
 
     private void changeColorByType()
