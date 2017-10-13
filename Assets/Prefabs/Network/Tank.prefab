@@ -243,10 +243,12 @@ MonoBehaviour:
   ShootYDirError: 0.05
   ShoorikanObj: {fileID: 1772675571485230, guid: 05c673a70ba4fb743aabc1a34c3cab32,
     type: 2}
+  FragmentObj: {fileID: 1304849136878270, guid: 8b4aee8e25c51474fb10d747a860f785,
+    type: 2}
   LaserObj: {fileID: 1195524495744418, guid: 5c92985ad495dda468c9d8f67d0c615c, type: 2}
   LaserDuration: 0.1
-  ShootDistanceFromTank: 0
   ShootSound: {fileID: 8300000, guid: 9663b4ffcd2029843945113f0b70b8c1, type: 3}
+  InvincibilityTime: 5
 --- !u!114 &114659064482147510
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -33,6 +33,8 @@ public abstract class Chip : MonoBehaviour
     public float CooldownTime = 1.0F;
     private float _currentCooldownTime = 0.0F;
 
+    public int RequiredAmmo = 0;
+
     public Sprite IconPic;
 
     private Color _NonActiveColor = new Color(0.15F, 0.15F, 0.15F);
@@ -106,6 +108,9 @@ public abstract class Chip : MonoBehaviour
         if (Players.Instance.GetLocal().PowerData.Power < Cost)
             return;
 
+        if (Players.Instance.GetLocal().AmmoData.AmmoCount < RequiredAmmo)
+            return;
+
         Players.Instance.GetLocal().PowerData.Power -= Cost;
         _currentCooldownTime = CooldownTime;
         executeStart();
@@ -149,7 +154,9 @@ public abstract class Chip : MonoBehaviour
 
         _fillTransform.localScale = new Vector3(1.0F, ratio);
 
-        if (_currentCooldownTime <= 0.0F && Players.Instance.GetLocal().PowerData.Power >= Cost)
+        if (_currentCooldownTime <= 0.0F && 
+            Players.Instance.GetLocal().PowerData.Power >= Cost && 
+            Players.Instance.GetLocal().AmmoData.AmmoCount >= RequiredAmmo)
         {
             _fillImage.color = Color.green;
         }

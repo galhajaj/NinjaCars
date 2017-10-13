@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChipHedgehog : Chip
 {
-    public int AmmoBurstCount = 50;
+    public int FragmentsPerAmmoUnit = 5;
     public float ErrorX = 10.0F;
     public float ErrorY = 10.0F;
 
@@ -18,13 +18,17 @@ public class ChipHedgehog : Chip
         userShootingScript.ShootXDirError = ErrorX;
         userShootingScript.ShootYDirError = ErrorY;
 
-        for (int i = 0; i < AmmoBurstCount; i++)
+        int fragments = FragmentsPerAmmoUnit * Players.Instance.GetLocal().AmmoData.AmmoCount;
+
+        for (int i = 0; i < fragments; i++)
         {
-            userShootingScript.FireSingle();
+            userShootingScript.FireSingle(UserShooting.AmmoType.FRAGMENT);
         }
 
         userShootingScript.ShootXDirError = originalErrorX;
         userShootingScript.ShootYDirError = originalErrorY;
+
+        Players.Instance.GetLocal().AmmoData.AmmoCount = 0;
     }
 
     protected override void executeEnd()

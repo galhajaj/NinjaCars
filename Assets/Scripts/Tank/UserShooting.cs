@@ -5,6 +5,12 @@ using UnityEngine.Networking;
 
 public class UserShooting : NetworkBehaviour
 {
+    public enum AmmoType
+    {
+        SHOORIKAN,
+        FRAGMENT
+    }
+
     public int ClipMaxSize = 10;
     public int AmmoCount;
     public float AmmoRegenerationRate = 1.25F;
@@ -14,6 +20,7 @@ public class UserShooting : NetworkBehaviour
     public float ShootXDirError = 0.25F;
     public float ShootYDirError = 0.25F;
     public GameObject ShoorikanObj;
+    public GameObject FragmentObj;
     public GameObject LaserObj;
     public float LaserDuration = 0.1F;
     public AudioClip ShootSound;
@@ -57,12 +64,12 @@ public class UserShooting : NetworkBehaviour
                 AmmoCount--;
                 _timeToShoot = FireRate;
 
-                FireSingle();
+                FireSingle(AmmoType.SHOORIKAN);
             }
         }
     }
 
-    public void FireSingle()
+    public void FireSingle(AmmoType ammoType)
     {
         Vector3 shootDir = Quaternion.AngleAxis(90.0F, Vector3.forward) * this.transform.right;
         Vector3 errorToShootDir = new Vector3(Random.Range(-ShootXDirError, ShootXDirError), Random.Range(-ShootYDirError, ShootYDirError));
@@ -95,7 +102,7 @@ public class UserShooting : NetworkBehaviour
                 }
             }
 
-            CmdThrowShoorikan(this.transform.position, hit.point);
+            CmdThrowShoorikan(this.transform.position, hit.point, ammoType);
         }
     }
 
@@ -172,9 +179,9 @@ public class UserShooting : NetworkBehaviour
     }
 
     [Command]
-    private void CmdThrowShoorikan(Vector2 origin, Vector2 destination)
+    private void CmdThrowShoorikan(Vector2 origin, Vector2 destination, AmmoType ammoType)
     {
-        RpcThrowShoorikanOnClient(origin, destination, Random.Range(0.0F, 360.0F));
+        RpcThrowShoorikanOnClient(origin, destination, Random.Range(0.0F, 360.0F), ammoType);
     }
 
     [Command]
@@ -184,11 +191,13 @@ public class UserShooting : NetworkBehaviour
     }
 
     [ClientRpc]
-    public void RpcThrowShoorikanOnClient(Vector2 origin, Vector2 destination, float shoorikanAngle)
+    public void RpcThrowShoorikanOnClient(Vector2 origin, Vector2 destination, float shoorikanAngle, AmmoType ammoType)
     {
         _audioSource.PlayOneShot(ShootSound);
 
-        GameObject shoorikan = Instantiate(ShoorikanObj, destination, Quaternion.identity) as GameObject;
+        GameObject objectToCreate = (ammoType == AmmoType.SHOORIKAN) ? ShoorikanObj : FragmentObj;
+
+        GameObject shoorikan = Instantiate(objectToCreate, destination, Quaternion.identity) as GameObject;
         shoorikan.transform.Rotate(Vector3.forward * shoorikanAngle, Space.World);
 
         GameObject laser = Instantiate(LaserObj, origin, Quaternion.identity) as GameObject;
