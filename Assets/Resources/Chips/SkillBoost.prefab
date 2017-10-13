@@ -76,8 +76,9 @@ MonoBehaviour:
   CostChildObj: {fileID: 1589642714096088, guid: 1e74a58afb3ad42479e3ea3020363175,
     type: 2}
   Type: 1
-  Cost: 1
+  Cost: 2
   CooldownTime: 1
+  RequiredAmmo: 0
   IconPic: {fileID: 21300000, guid: 001333751a24d104c9ededdb0e5b338f, type: 3}
   Thrust: 30000
 --- !u!222 &222906504995597918

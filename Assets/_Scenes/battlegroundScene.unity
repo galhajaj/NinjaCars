@@ -390,7 +390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JadeObj: {fileID: 1670237418271620, guid: ea42b622b8f5d8e4c8ddd1182b5c6dbb, type: 2}
   TimeIntervalToCreate: 5
-  SquareAreaToCreateIn: 5
+  SquareAreaToCreateIn: 50
   NumberOfJadesAllowedToExist: 10
 --- !u!1 &828660752
 GameObject:
@@ -525,7 +525,7 @@ Prefab:
     - target: {fileID: 224991493426914170, guid: d1b74b8fb53bb9341a302b5f0538e0a5,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000076293945
+      value: -0.000061035156
       objectReference: {fileID: 0}
     - target: {fileID: 224991493426914170, guid: d1b74b8fb53bb9341a302b5f0538e0a5,
         type: 2}
@@ -540,7 +540,7 @@ Prefab:
     - target: {fileID: 224991493426914170, guid: d1b74b8fb53bb9341a302b5f0538e0a5,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 224991493426914170, guid: d1b74b8fb53bb9341a302b5f0538e0a5,
         type: 2}
@@ -758,7 +758,7 @@ Prefab:
     - target: {fileID: 224091617123156286, guid: 912706055c763c340b20266fb4f67402,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 224091617123156286, guid: 912706055c763c340b20266fb4f67402,
         type: 2}
@@ -1093,7 +1093,7 @@ Prefab:
     - target: {fileID: 224075017181784944, guid: 30d4bff4030801449b17b60141a4a043,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 224075017181784944, guid: 30d4bff4030801449b17b60141a4a043,
         type: 2}

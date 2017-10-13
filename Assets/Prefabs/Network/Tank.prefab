@@ -249,6 +249,8 @@ MonoBehaviour:
   LaserDuration: 0.1
   ShootSound: {fileID: 8300000, guid: 9663b4ffcd2029843945113f0b70b8c1, type: 3}
   InvincibilityTime: 5
+  AimObj: {fileID: 1110159028733026, guid: cd42167987c251c4ba2ea32def06ea09, type: 2}
+  AimDistance: 3
 --- !u!114 &114659064482147510
 MonoBehaviour:
   m_ObjectHideFlags: 1

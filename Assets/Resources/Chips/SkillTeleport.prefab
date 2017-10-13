@@ -51,10 +51,12 @@ MonoBehaviour:
   Type: 1
   Cost: 0
   CooldownTime: 1
-  IconPic: {fileID: 21300000, guid: c41cd85e8fb156040a0d15e44ae03f02, type: 3}
+  RequiredAmmo: 0
+  IconPic: {fileID: 21300000, guid: b1b9a84a0de44ca4fb7318e6ffc248cb, type: 3}
   TeleportMarkObj: {fileID: 1617530887164104, guid: 415692c05cec0ee41aa159247b716c92,
     type: 2}
   CostAfterTeleportMarkPlacement: 2
+  IconAfterCreation: {fileID: 21300000, guid: c41cd85e8fb156040a0d15e44ae03f02, type: 3}
 --- !u!114 &114860863269110082
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -29,12 +29,21 @@ public class UserShooting : NetworkBehaviour
     public float InvincibilityTime = 5.0F;
     private float _invincibilityTimeRemaining = 0.0F;
 
+    public GameObject AimObj;
+    public float AimDistance = 3.0F;
+
     void Start ()
     {
         _audioSource = this.GetComponent<AudioSource>();
         AmmoCount = ClipMaxSize;
         _timeToAddAmmo = AmmoRegenerationRate;
         _timeToShoot = 0.0F;
+
+        // add aim
+        if (isLocalPlayer)
+        {
+            Instantiate(AimObj, this.transform.position + Quaternion.Euler(0, 0, 90) * this.transform.right * AimDistance, Quaternion.identity).transform.SetParent(this.transform);
+        }
     }
 	
 	void Update ()
