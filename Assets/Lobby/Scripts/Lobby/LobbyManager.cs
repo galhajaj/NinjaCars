@@ -15,6 +15,8 @@ namespace Prototype.NetworkLobby
 
         static public LobbyManager s_Singleton;
 
+        private LogonManager _logonWindow;
+
 
         [Header("Unity UI Lobby")]
         [Tooltip("Time in second between all players ready & match start")]
@@ -65,6 +67,7 @@ namespace Prototype.NetworkLobby
             DontDestroyOnLoad(gameObject);
 
             SetServerInfo("Offline", "None");
+            _logonWindow = GameObject.Find("UserDetailsInfo").GetComponent<LogonManager>();
         }
 
         public override void OnLobbyClientSceneChanged(NetworkConnection conn)
@@ -119,6 +122,19 @@ namespace Prototype.NetworkLobby
 
         public void ChangeTo(RectTransform newPanel)
         {
+            if (newPanel != null)
+            {
+                if (newPanel.name == "MainPanel")
+                {
+                    _logonWindow.UpdateGui();
+
+                }
+                else
+                {
+                    _logonWindow.UpdateGui(false);
+                }
+            }
+
             if (currentPanel != null)
             {
                 currentPanel.gameObject.SetActive(false);

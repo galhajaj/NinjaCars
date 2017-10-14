@@ -1,14 +1,3 @@
-Mono path[0] = 'D:/githubRepo/TankAndSlash/TankAndSlash/TankAndSlash_Data/Managed'
-Mono config path = 'D:/githubRepo/TankAndSlash/TankAndSlash/TankAndSlash_Data/Mono/etc'
-PlayerConnection initialized from D:/githubRepo/TankAndSlash/TankAndSlash/TankAndSlash_Data (debug = 0)
-PlayerConnection initialized network socket : 0.0.0.0 55431
-Multi-casting "[IP] 10.0.0.25 [Port] 55431 [Flags] 3 [Guid] 3139110376 [EditorId] 2361777314 [Version] 1048832 [Id] WindowsPlayer(Ligal) [Debug] 1" to [225.0.0.222:54997]...
-Waiting for connection from host on [0.0.0.0:55431]...
-PlayerConnection accepted from [10.0.0.25] handle:0x370
-Started listening to [0.0.0.0:55431]
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,defer=y,address=0.0.0.0:56376
-PlayerConnection already initialized - listening to [0.0.0.0:55431]
-Player data archive not found at `D:/githubRepo/TankAndSlash/TankAndSlash/TankAndSlash_Data/data.unity3d`, using local filesystem
 Initialize engine version: 2017.1.0f3 (472613c02cf7)
 GfxDevice: creating device client; threaded=1
 Direct3D:
@@ -18,217 +7,40 @@ Direct3D:
     VRAM:     978 MB
     Driver:   21.21.13.6909
 Begin MonoManager ReloadAssembly
-Platform assembly: D:\githubRepo\TankAndSlash\TankAndSlash\TankAndSlash_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading D:\githubRepo\TankAndSlash\TankAndSlash\TankAndSlash_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: D:\githubRepo\TankAndSlash\TankAndSlash\TankAndSlash_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading D:\githubRepo\TankAndSlash\TankAndSlash\TankAndSlash_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: D:\githubRepo\TankAndSlash\TankAndSlash\TankAndSlash_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading D:\githubRepo\TankAndSlash\TankAndSlash\TankAndSlash_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: D:\githubRepo\TankAndSlash\TankAndSlash\TankAndSlash_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading D:\githubRepo\TankAndSlash\TankAndSlash\TankAndSlash_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: D:\githubRepo\TankAndSlash\TankAndSlash\TankAndSlash_Data\Managed\UnityEngine.Timeline.dll (this message is harmless)
-Loading D:\githubRepo\TankAndSlash\TankAndSlash\TankAndSlash_Data\Managed\UnityEngine.Timeline.dll into Unity Child Domain
-Platform assembly: D:\githubRepo\TankAndSlash\TankAndSlash\TankAndSlash_Data\Managed\System.dll (this message is harmless)
-Platform assembly: D:\githubRepo\TankAndSlash\TankAndSlash\TankAndSlash_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.332 seconds
+Platform assembly: D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\UnityEngine.Timeline.dll (this message is harmless)
+Loading D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\UnityEngine.Timeline.dll into Unity Child Domain
+Platform assembly: D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\BouncyCastle_GameSparks.dll (this message is harmless)
+Loading D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\BouncyCastle_GameSparks.dll into Unity Child Domain
+Platform assembly: D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\GameSparks.Api.dll (this message is harmless)
+Loading D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\GameSparks.Api.dll into Unity Child Domain
+Platform assembly: D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\GameSparks.dll (this message is harmless)
+Loading D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\GameSparks.dll into Unity Child Domain
+Platform assembly: D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\GameSparksRT.dll (this message is harmless)
+Loading D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\GameSparksRT.dll into Unity Child Domain
+Platform assembly: D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\System.dll (this message is harmless)
+Platform assembly: D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.479 seconds
 <RI> Initializing input.
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 2.601735 ms
-Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 34.249633 ms
-System memory in use before: 21.6 MB.
-System memory in use after: 21.7 MB.
-
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 772.
-Total: 22.498202 ms (FindLiveObjects: 0.062149 ms CreateObjectMapping: 0.024517 ms MarkObjects: 22.400701 ms  DeleteObjects: 0.009122 ms)
-
-The referenced script on this Behaviour (Game Object 'Portal') is missing!
+UnloadTime: 77.449353 ms
+Error logging
  
-(Filename: C:\buildslave\unity\build\Runtime/Mono/MonoBehaviour.cpp Line: 1758)
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.542812 ms
-We're in Israel
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-LoadLevel:Awake() (at D:\githubRepo\TankAndSlash\TankAndSlash\Assets\Scripts\Managers\LoadLevel.cs:10)
+Error logging
  
-(Filename: D:/githubRepo/TankAndSlash/TankAndSlash/Assets/Scripts/Managers/LoadLevel.cs Line: 10)
-
-The referenced script on this Behaviour (Game Object '<null>') is missing!
-UnityEngine.Object:INTERNAL_CALL_Internal_InstantiateSingle(Object, Vector3&, Quaternion&)
-UnityEngine.Object:Internal_InstantiateSingle(Object, Vector3, Quaternion) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineObjectBindings.gen.cs:52)
-UnityEngine.Object:Instantiate(Object, Vector3, Quaternion) (at C:\buildslave\unity\build\Runtime\Export\UnityEngineObject.cs:155)
-UnityEngine.Object:Instantiate(GameObject, Vector3, Quaternion) (at C:\buildslave\unity\build\Runtime\Export\UnityEngineObject.cs:205)
-LevelGenerator:GeneratePortals() (at D:\githubRepo\TankAndSlash\TankAndSlash\Assets\Scripts\LevelGenerator\LevelGenerator.cs:53)
-LevelGenerator:Awake() (at D:\githubRepo\TankAndSlash\TankAndSlash\Assets\Scripts\LevelGenerator\LevelGenerator.cs:25)
-
-[C:\buildslave\unity\build\Runtime/Mono/MonoBehaviour.cpp line 1758] 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineObjectBindings.gen.cs Line: 52)
-
-The referenced script on this Behaviour (Game Object 'Portal') is missing!
-UnityEngine.Object:INTERNAL_CALL_Internal_InstantiateSingle(Object, Vector3&, Quaternion&)
-UnityEngine.Object:Internal_InstantiateSingle(Object, Vector3, Quaternion) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineObjectBindings.gen.cs:52)
-UnityEngine.Object:Instantiate(Object, Vector3, Quaternion) (at C:\buildslave\unity\build\Runtime\Export\UnityEngineObject.cs:155)
-UnityEngine.Object:Instantiate(GameObject, Vector3, Quaternion) (at C:\buildslave\unity\build\Runtime\Export\UnityEngineObject.cs:205)
-LevelGenerator:GeneratePortals() (at D:\githubRepo\TankAndSlash\TankAndSlash\Assets\Scripts\LevelGenerator\LevelGenerator.cs:53)
-LevelGenerator:Awake() (at D:\githubRepo\TankAndSlash\TankAndSlash\Assets\Scripts\LevelGenerator\LevelGenerator.cs:25)
-
-[C:\buildslave\unity\build\Runtime/Mono/MonoBehaviour.cpp line 1758] 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineObjectBindings.gen.cs Line: 52)
-
-The referenced script on this Behaviour (Game Object 'Portal') is missing!
-UnityEngine.Object:INTERNAL_CALL_Internal_InstantiateSingle(Object, Vector3&, Quaternion&)
-UnityEngine.Object:Internal_InstantiateSingle(Object, Vector3, Quaternion) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineObjectBindings.gen.cs:52)
-UnityEngine.Object:Instantiate(Object, Vector3, Quaternion) (at C:\buildslave\unity\build\Runtime\Export\UnityEngineObject.cs:155)
-UnityEngine.Object:Instantiate(GameObject, Vector3, Quaternion) (at C:\buildslave\unity\build\Runtime\Export\UnityEngineObject.cs:205)
-LevelGenerator:GeneratePortals() (at D:\githubRepo\TankAndSlash\TankAndSlash\Assets\Scripts\LevelGenerator\LevelGenerator.cs:53)
-LevelGenerator:Awake() (at D:\githubRepo\TankAndSlash\TankAndSlash\Assets\Scripts\LevelGenerator\LevelGenerator.cs:25)
-
-[C:\buildslave\unity\build\Runtime/Mono/MonoBehaviour.cpp line 1758] 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineObjectBindings.gen.cs Line: 52)
-
-The referenced script on this Behaviour (Game Object '<null>') is missing!
-UnityEngine.Object:INTERNAL_CALL_Internal_InstantiateSingle(Object, Vector3&, Quaternion&)
-UnityEngine.Object:Internal_InstantiateSingle(Object, Vector3, Quaternion) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineObjectBindings.gen.cs:52)
-UnityEngine.Object:Instantiate(Object, Vector3, Quaternion) (at C:\buildslave\unity\build\Runtime\Export\UnityEngineObject.cs:155)
-UnityEngine.Object:Instantiate(GameObject, Vector3, Quaternion) (at C:\buildslave\unity\build\Runtime\Export\UnityEngineObject.cs:205)
-LevelGenerator:GeneratePortals() (at D:\githubRepo\TankAndSlash\TankAndSlash\Assets\Scripts\LevelGenerator\LevelGenerator.cs:53)
-LevelGenerator:Awake() (at D:\githubRepo\TankAndSlash\TankAndSlash\Assets\Scripts\LevelGenerator\LevelGenerator.cs:25)
-
-[C:\buildslave\unity\build\Runtime/Mono/MonoBehaviour.cpp line 1758] 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineObjectBindings.gen.cs Line: 52)
-
-The referenced script on this Behaviour (Game Object 'Portal') is missing!
-UnityEngine.Object:INTERNAL_CALL_Internal_InstantiateSingle(Object, Vector3&, Quaternion&)
-UnityEngine.Object:Internal_InstantiateSingle(Object, Vector3, Quaternion) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineObjectBindings.gen.cs:52)
-UnityEngine.Object:Instantiate(Object, Vector3, Quaternion) (at C:\buildslave\unity\build\Runtime\Export\UnityEngineObject.cs:155)
-UnityEngine.Object:Instantiate(GameObject, Vector3, Quaternion) (at C:\buildslave\unity\build\Runtime\Export\UnityEngineObject.cs:205)
-LevelGenerator:GeneratePortals() (at D:\githubRepo\TankAndSlash\TankAndSlash\Assets\Scripts\LevelGenerator\LevelGenerator.cs:53)
-LevelGenerator:Awake() (at D:\githubRepo\TankAndSlash\TankAndSlash\Assets\Scripts\LevelGenerator\LevelGenerator.cs:25)
-
-[C:\buildslave\unity\build\Runtime/Mono/MonoBehaviour.cpp line 1758] 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineObjectBindings.gen.cs Line: 52)
-
-The referenced script on this Behaviour (Game Object 'Portal') is missing!
-UnityEngine.Object:INTERNAL_CALL_Internal_InstantiateSingle(Object, Vector3&, Quaternion&)
-UnityEngine.Object:Internal_InstantiateSingle(Object, Vector3, Quaternion) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineObjectBindings.gen.cs:52)
-UnityEngine.Object:Instantiate(Object, Vector3, Quaternion) (at C:\buildslave\unity\build\Runtime\Export\UnityEngineObject.cs:155)
-UnityEngine.Object:Instantiate(GameObject, Vector3, Quaternion) (at C:\buildslave\unity\build\Runtime\Export\UnityEngineObject.cs:205)
-LevelGenerator:GeneratePortals() (at D:\githubRepo\TankAndSlash\TankAndSlash\Assets\Scripts\LevelGenerator\LevelGenerator.cs:53)
-LevelGenerator:Awake() (at D:\githubRepo\TankAndSlash\TankAndSlash\Assets\Scripts\LevelGenerator\LevelGenerator.cs:25)
-
-[C:\buildslave\unity\build\Runtime/Mono/MonoBehaviour.cpp line 1758] 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineObjectBindings.gen.cs Line: 52)
-
-The referenced script on this Behaviour (Game Object '<null>') is missing!
-UnityEngine.Object:INTERNAL_CALL_Internal_InstantiateSingle(Object, Vector3&, Quaternion&)
-UnityEngine.Object:Internal_InstantiateSingle(Object, Vector3, Quaternion) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineObjectBindings.gen.cs:52)
-UnityEngine.Object:Instantiate(Object, Vector3, Quaternion) (at C:\buildslave\unity\build\Runtime\Export\UnityEngineObject.cs:155)
-UnityEngine.Object:Instantiate(GameObject, Vector3, Quaternion) (at C:\buildslave\unity\build\Runtime\Export\UnityEngineObject.cs:205)
-LevelGenerator:GeneratePortals() (at D:\githubRepo\TankAndSlash\TankAndSlash\Assets\Scripts\LevelGenerator\LevelGenerator.cs:53)
-LevelGenerator:Awake() (at D:\githubRepo\TankAndSlash\TankAndSlash\Assets\Scripts\LevelGenerator\LevelGenerator.cs:25)
-
-[C:\buildslave\unity\build\Runtime/Mono/MonoBehaviour.cpp line 1758] 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineObjectBindings.gen.cs Line: 52)
-
-The referenced script on this Behaviour (Game Object 'Portal') is missing!
-UnityEngine.Object:INTERNAL_CALL_Internal_InstantiateSingle(Object, Vector3&, Quaternion&)
-UnityEngine.Object:Internal_InstantiateSingle(Object, Vector3, Quaternion) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineObjectBindings.gen.cs:52)
-UnityEngine.Object:Instantiate(Object, Vector3, Quaternion) (at C:\buildslave\unity\build\Runtime\Export\UnityEngineObject.cs:155)
-UnityEngine.Object:Instantiate(GameObject, Vector3, Quaternion) (at C:\buildslave\unity\build\Runtime\Export\UnityEngineObject.cs:205)
-LevelGenerator:GeneratePortals() (at D:\githubRepo\TankAndSlash\TankAndSlash\Assets\Scripts\LevelGenerator\LevelGenerator.cs:53)
-LevelGenerator:Awake() (at D:\githubRepo\TankAndSlash\TankAndSlash\Assets\Scripts\LevelGenerator\LevelGenerator.cs:25)
-
-[C:\buildslave\unity\build\Runtime/Mono/MonoBehaviour.cpp line 1758] 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineObjectBindings.gen.cs Line: 52)
-
-The referenced script on this Behaviour (Game Object 'Portal') is missing!
-UnityEngine.Object:INTERNAL_CALL_Internal_InstantiateSingle(Object, Vector3&, Quaternion&)
-UnityEngine.Object:Internal_InstantiateSingle(Object, Vector3, Quaternion) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineObjectBindings.gen.cs:52)
-UnityEngine.Object:Instantiate(Object, Vector3, Quaternion) (at C:\buildslave\unity\build\Runtime\Export\UnityEngineObject.cs:155)
-UnityEngine.Object:Instantiate(GameObject, Vector3, Quaternion) (at C:\buildslave\unity\build\Runtime\Export\UnityEngineObject.cs:205)
-LevelGenerator:GeneratePortals() (at D:\githubRepo\TankAndSlash\TankAndSlash\Assets\Scripts\LevelGenerator\LevelGenerator.cs:53)
-LevelGenerator:Awake() (at D:\githubRepo\TankAndSlash\TankAndSlash\Assets\Scripts\LevelGenerator\LevelGenerator.cs:25)
-
-[C:\buildslave\unity\build\Runtime/Mono/MonoBehaviour.cpp line 1758] 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineObjectBindings.gen.cs Line: 52)
-
-The referenced script on this Behaviour (Game Object '<null>') is missing!
-UnityEngine.Object:INTERNAL_CALL_Internal_InstantiateSingle(Object, Vector3&, Quaternion&)
-UnityEngine.Object:Internal_InstantiateSingle(Object, Vector3, Quaternion) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineObjectBindings.gen.cs:52)
-UnityEngine.Object:Instantiate(Object, Vector3, Quaternion) (at C:\buildslave\unity\build\Runtime\Export\UnityEngineObject.cs:155)
-UnityEngine.Object:Instantiate(GameObject, Vector3, Quaternion) (at C:\buildslave\unity\build\Runtime\Export\UnityEngineObject.cs:205)
-LevelGenerator:GeneratePortals() (at D:\githubRepo\TankAndSlash\TankAndSlash\Assets\Scripts\LevelGenerator\LevelGenerator.cs:53)
-LevelGenerator:Awake() (at D:\githubRepo\TankAndSlash\TankAndSlash\Assets\Scripts\LevelGenerator\LevelGenerator.cs:25)
-
-[C:\buildslave\unity\build\Runtime/Mono/MonoBehaviour.cpp line 1758] 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineObjectBindings.gen.cs Line: 52)
-
-The referenced script on this Behaviour (Game Object 'Portal') is missing!
-UnityEngine.Object:INTERNAL_CALL_Internal_InstantiateSingle(Object, Vector3&, Quaternion&)
-UnityEngine.Object:Internal_InstantiateSingle(Object, Vector3, Quaternion) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineObjectBindings.gen.cs:52)
-UnityEngine.Object:Instantiate(Object, Vector3, Quaternion) (at C:\buildslave\unity\build\Runtime\Export\UnityEngineObject.cs:155)
-UnityEngine.Object:Instantiate(GameObject, Vector3, Quaternion) (at C:\buildslave\unity\build\Runtime\Export\UnityEngineObject.cs:205)
-LevelGenerator:GeneratePortals() (at D:\githubRepo\TankAndSlash\TankAndSlash\Assets\Scripts\LevelGenerator\LevelGenerator.cs:53)
-LevelGenerator:Awake() (at D:\githubRepo\TankAndSlash\TankAndSlash\Assets\Scripts\LevelGenerator\LevelGenerator.cs:25)
-
-[C:\buildslave\unity\build\Runtime/Mono/MonoBehaviour.cpp line 1758] 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineObjectBindings.gen.cs Line: 52)
-
-The referenced script on this Behaviour (Game Object 'Portal') is missing!
-UnityEngine.Object:INTERNAL_CALL_Internal_InstantiateSingle(Object, Vector3&, Quaternion&)
-UnityEngine.Object:Internal_InstantiateSingle(Object, Vector3, Quaternion) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineObjectBindings.gen.cs:52)
-UnityEngine.Object:Instantiate(Object, Vector3, Quaternion) (at C:\buildslave\unity\build\Runtime\Export\UnityEngineObject.cs:155)
-UnityEngine.Object:Instantiate(GameObject, Vector3, Quaternion) (at C:\buildslave\unity\build\Runtime\Export\UnityEngineObject.cs:205)
-LevelGenerator:GeneratePortals() (at D:\githubRepo\TankAndSlash\TankAndSlash\Assets\Scripts\LevelGenerator\LevelGenerator.cs:53)
-LevelGenerator:Awake() (at D:\githubRepo\TankAndSlash\TankAndSlash\Assets\Scripts\LevelGenerator\LevelGenerator.cs:25)
-
-[C:\buildslave\unity\build\Runtime/Mono/MonoBehaviour.cpp line 1758] 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineObjectBindings.gen.cs Line: 52)
-
-IndexOutOfRangeException: Array index is out of range.
-  at LevelGenerator.GenerateWalls () [0x000ac] in D:\githubRepo\TankAndSlash\TankAndSlash\Assets\Scripts\LevelGenerator\LevelGenerator.cs:80 
-  at LevelGenerator.Awake () [0x0000e] in D:\githubRepo\TankAndSlash\TankAndSlash\Assets\Scripts\LevelGenerator\LevelGenerator.cs:27 
- 
-(Filename: D:/githubRepo/TankAndSlash/TankAndSlash/Assets/Scripts/LevelGenerator/LevelGenerator.cs Line: 80)
-
-System memory in use before: 29.1 MB.
-System memory in use after: 29.6 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 10845.
-Total: 3.498060 ms (FindLiveObjects: 0.777156 ms CreateObjectMapping: 0.151097 ms MarkObjects: 2.515638 ms  DeleteObjects: 0.051886 ms)
-
-Remember to remove script BackToMapOnEsc from Manager in battle scene - or not...
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogWarning(Object)
-BackToMapOnEsc:Start() (at D:\githubRepo\TankAndSlash\TankAndSlash\Assets\Scripts\Managers\BackToMapOnEsc.cs:10)
- 
-(Filename: D:/githubRepo/TankAndSlash/TankAndSlash/Assets/Scripts/Managers/BackToMapOnEsc.cs Line: 10)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 7.089630 ms
-System memory in use before: 27.1 MB.
-System memory in use after: 27.2 MB.
-
-Unloading 73 unused Assets to reduce memory usage. Loaded Objects now: 781.
-Total: 0.439609 ms (FindLiveObjects: 0.059298 ms CreateObjectMapping: 0.027938 ms MarkObjects: 0.266274 ms  DeleteObjects: 0.084386 ms)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.834174 ms
-System memory in use before: 23.5 MB.
-System memory in use after: 23.6 MB.
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 760.
-Total: 0.391714 ms (FindLiveObjects: 0.057588 ms CreateObjectMapping: 0.030219 ms MarkObjects: 0.267414 ms  DeleteObjects: 0.035351 ms)
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: f9c -> priority: 1 
-  Thread -> id: 1b48 -> priority: 1 
-Waiting for finish
+  Thread -> id: 337c -> priority: 1 
+  Thread -> id: 2af4 -> priority: 1 

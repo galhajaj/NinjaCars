@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
+using GameSparks.Core;
 
 public class MatchParams : NetworkBehaviour
 {
@@ -38,7 +39,16 @@ public class MatchParams : NetworkBehaviour
 		if (HostPlayerScore >= _numberOfRoundsToWin || VisitorPlayerScore >= _numberOfRoundsToWin)
         {
             Debug.Log("WIN!!!!!!");
+            if ((HostPlayerScore >= _numberOfRoundsToWin && isServer) || (VisitorPlayerScore >= _numberOfRoundsToWin || !isServer))
+            {
+                UpdateGameResult(true);
+            }
             SceneManager.LoadScene("mainScene");
         }
 	}
+
+    void UpdateGameResult(bool won)
+    {
+        GameObject.Find("UserDetailsInfo").GetComponent<LogonManager>().UpdateMatchResult(won);
+    }
 }
