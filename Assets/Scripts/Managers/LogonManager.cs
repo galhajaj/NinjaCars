@@ -53,7 +53,7 @@ public class LogonManager : MonoBehaviour {
     {
         _gui = GameObject.Find("UserDetailsGui");
         _mainPanel = GameObject.Find("MainPanel");
-        SetMainPanelActive(false);
+        SetMainPanelActive(true); // TODO: GalHajaj change that to true 
         foreach (InputField inpfld in _gui.GetComponentsInChildren<InputField>())
         {
             if (inpfld.name == "UsernameInput")

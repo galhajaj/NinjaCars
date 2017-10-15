@@ -155,10 +155,11 @@ public class UserShooting : NetworkBehaviour
         spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)].transform.position;
         player.transform.position = spawnPoint;
 
-        // add extra skill
+        // add extra skill & refill the shoorikans
         if (Players.Instance.GetLocal().gameObject == player)
         {
             SkillBarManager.Instance.AddUniqueRandomChips(1);
+            Players.Instance.GetLocal().AmmoData.AmmoCount = Players.Instance.GetLocal().AmmoData.ClipMaxSize;
         }
     }
 
