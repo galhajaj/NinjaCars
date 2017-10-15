@@ -111,7 +111,18 @@ public class UserShooting : NetworkBehaviour
                 }
             }
 
-            CmdThrowShoorikan(this.transform.position, hit.point, ammoType);
+            // to make it faster in both server & client, when on server do the RPC which send to both clients included itself
+            // and if client, make a local event & send to the server to make on its own the same
+            if (isServer)
+            {
+                RpcThrowShoorikanOnClient(this.transform.position, hit.point, Random.Range(0.0F, 360.0F), ammoType);
+            }
+            else
+            {
+                ThrowShoorikanOnClient(this.transform.position, hit.point, Random.Range(0.0F, 360.0F), ammoType);
+                CmdThrowShoorikanOnClient(this.transform.position, hit.point, Random.Range(0.0F, 360.0F), ammoType);
+            }
+            //CmdThrowShoorikan(this.transform.position, hit.point, ammoType);
         }
     }
 
@@ -188,11 +199,11 @@ public class UserShooting : NetworkBehaviour
             MatchParams.Instance.VisitorPlayerScore++;
     }
 
-    [Command]
+    /*[Command]
     private void CmdThrowShoorikan(Vector2 origin, Vector2 destination, AmmoType ammoType)
     {
         RpcThrowShoorikanOnClient(origin, destination, Random.Range(0.0F, 360.0F), ammoType);
-    }
+    }*/
 
     [Command]
     private void CmdDestroyPlayer(GameObject player)
@@ -200,8 +211,18 @@ public class UserShooting : NetworkBehaviour
         NetworkServer.Destroy(player);
     }
 
+    [Command]
+    public void CmdThrowShoorikanOnClient(Vector2 origin, Vector2 destination, float shoorikanAngle, AmmoType ammoType)
+    {
+        ThrowShoorikanOnClient(origin, destination, shoorikanAngle, ammoType);
+    }
     [ClientRpc]
     public void RpcThrowShoorikanOnClient(Vector2 origin, Vector2 destination, float shoorikanAngle, AmmoType ammoType)
+    {
+        ThrowShoorikanOnClient(origin, destination, shoorikanAngle, ammoType);
+    }
+    // local
+    public void ThrowShoorikanOnClient(Vector2 origin, Vector2 destination, float shoorikanAngle, AmmoType ammoType)
     {
         _audioSource.PlayOneShot(ShootSound);
 
