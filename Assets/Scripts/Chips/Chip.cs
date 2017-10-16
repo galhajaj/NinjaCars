@@ -16,12 +16,15 @@ public abstract class Chip : MonoBehaviour
     public GameObject FrameChildObj;
     public GameObject IconChildObj;
     public GameObject CostChildObj;
+    public GameObject DigitChildObj;
     private Transform _fillTransform;
     private Image _fillImage;
     private Transform _icon;
     private Transform _frame;
     private Transform _cost;
     private Text _costText;
+    private Transform _digit;
+    private Text _digitText;
 
     public ChipType Type = ChipType.ACTIVE;
 
@@ -38,6 +41,8 @@ public abstract class Chip : MonoBehaviour
     public Sprite IconPic;
 
     private Color _NonActiveColor = new Color(0.15F, 0.15F, 0.15F);
+
+    public static int RunningNumber = 0;
 
     void Awake()
     {
@@ -61,6 +66,12 @@ public abstract class Chip : MonoBehaviour
         _costText = _cost.Find("Text").GetComponent<Text>();
         _costText.text = Cost.ToString();
         _cost.SetParent(this.transform, false);
+
+        _digit = Instantiate(DigitChildObj).transform;
+        _digitText = _digit.GetComponent<Text>();
+        RunningNumber++;
+        _digitText.text = RunningNumber.ToString();
+        _digit.SetParent(this.transform, false);
 
         changeColorByType();
     }
