@@ -48,9 +48,12 @@ MonoBehaviour:
     type: 2}
   CostChildObj: {fileID: 1589642714096088, guid: 1e74a58afb3ad42479e3ea3020363175,
     type: 2}
+  DigitChildObj: {fileID: 1381562932806444, guid: cf810e4f148161d4496129630fe6fcdf,
+    type: 2}
   Type: 1
   Cost: 1
   CooldownTime: 1
+  RequiredAmmo: 0
   IconPic: {fileID: 21300000, guid: f6bb380236578e349a9b7e4e31820000, type: 3}
 --- !u!114 &114918002485996048
 MonoBehaviour:

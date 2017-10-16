@@ -75,6 +75,8 @@ MonoBehaviour:
     type: 2}
   CostChildObj: {fileID: 1589642714096088, guid: 1e74a58afb3ad42479e3ea3020363175,
     type: 2}
+  DigitChildObj: {fileID: 1381562932806444, guid: cf810e4f148161d4496129630fe6fcdf,
+    type: 2}
   Type: 1
   Cost: 2
   CooldownTime: 1
