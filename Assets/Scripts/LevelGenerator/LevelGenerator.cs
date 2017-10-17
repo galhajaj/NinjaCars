@@ -179,10 +179,10 @@ public class LevelGenerator : NetworkBehaviour
     void GenerateFence()
     {
         Tuple<int,int> nextBlockPosition = new Tuple<int,int>(0,0);
-        _blocksMap = new Color[LEVEL_HEIGHT + MAX_SHAPE_LENGTH * 2 ,LEVEL_WIDTH + MAX_SHAPE_LENGTH * 2] ;
+        _blocksMap = new Color[LEVEL_HEIGHT + MAX_SHAPE_LENGTH * 3 ,LEVEL_WIDTH + MAX_SHAPE_LENGTH * 3] ;
 
-        for (int i = 0; i < LEVEL_HEIGHT + MAX_SHAPE_LENGTH * 2; ++i)
-            for (int j = 0; j < LEVEL_WIDTH + MAX_SHAPE_LENGTH * 2; ++j)
+        for (int i = 0; i < LEVEL_HEIGHT + MAX_SHAPE_LENGTH * 3; ++i)
+            for (int j = 0; j < LEVEL_WIDTH + MAX_SHAPE_LENGTH * 3; ++j)
             {
                 _blocksMap[i, j] = new Color();
                 _blocksMap[i, j] = Color.clear;
@@ -241,7 +241,9 @@ public class LevelGenerator : NetworkBehaviour
             }
             fileMap += "balon";
         }
+/* not sure what's the problem with the following line. but it's irrelevant either way
         System.IO.File.WriteAllText(@"c:\temp\temp.txt", fileMap);
+*/
         
     }
 
