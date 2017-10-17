@@ -204,9 +204,9 @@ public class LevelGenerator : NetworkBehaviour
         }
 
         nextBlockPosition = new Tuple<int,int>(0, LEVEL_HEIGHT);
-        while (_blocksMap[LEVEL_WIDTH - 1, LEVEL_HEIGHT] == Color.clear &&
-            _blocksMap[LEVEL_WIDTH - 1, LEVEL_HEIGHT + 1] == Color.clear &&
-            _blocksMap[LEVEL_WIDTH - 1, LEVEL_HEIGHT + 2] == Color.clear)
+        while (_blocksMap[LEVEL_WIDTH, LEVEL_HEIGHT] == Color.clear &&
+            _blocksMap[LEVEL_WIDTH, LEVEL_HEIGHT + 1] == Color.clear &&
+            _blocksMap[LEVEL_WIDTH, LEVEL_HEIGHT + 2] == Color.clear)
         {
             AddFenceShapeToGrid(ref nextBlockPosition, true);
         }
