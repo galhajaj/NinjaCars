@@ -39,7 +39,7 @@ public class MatchParams : NetworkBehaviour
 		if (HostPlayerScore >= _numberOfRoundsToWin || VisitorPlayerScore >= _numberOfRoundsToWin)
         {
             Debug.Log("WIN!!!!!!");
-            if ((HostPlayerScore >= _numberOfRoundsToWin && isServer) || (VisitorPlayerScore >= _numberOfRoundsToWin || !isServer))
+            if ((HostPlayerScore >= _numberOfRoundsToWin && isServer) || (VisitorPlayerScore >= _numberOfRoundsToWin && !isServer))
             {
                 UpdateGameResult(true);
             }

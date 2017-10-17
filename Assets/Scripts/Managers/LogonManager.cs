@@ -159,4 +159,10 @@ public class LogonManager : MonoBehaviour {
 
         _gui.SetActive(true);
     }
+
+    public string GetUsername()
+    {
+        return _loggedOnUser;
+    }
+
 }

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 using UnityEngine.Networking.Match;
@@ -79,5 +79,92 @@ namespace Prototype.NetworkLobby
             currentPage = page;
 			lobbyManager.matchMaker.ListMatches(page, 6, "", true, 0, 0, OnGUIMatchList);
 		}
+    }
+}
+*/
+
+
+
+
+
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Networking;
+using UnityEngine.Networking.Match;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace Prototype.NetworkLobby
+{
+    public class LobbyServerList : MonoBehaviour
+    {
+        public LobbyManager lobbyManager;
+
+        public RectTransform serverListRect;
+        public GameObject serverEntryPrefab;
+        public GameObject noServerFound;
+
+        protected int currentPage = 0;
+
+        void OnEnable()
+        {
+            noServerFound.SetActive(false);
+            currentPage = 0;
+
+            //???
+            foreach (Transform t in serverListRect)
+                Destroy(t.gameObject);
+
+            RequestPage(currentPage);
+        }
+
+        public void OnGUIMatchList(bool success, string extendedInfo, List<MatchInfoSnapshot> matches)
+        {
+            if (matches.Count == 0)
+            {
+                string roomName = GameObject.Find("UserDetailsInfo").GetComponent<LogonManager>().GetUsername();
+                if (roomName == "")
+                {
+                    roomName = "emptyRoom";
+                }
+
+                lobbyManager.matchMaker.CreateMatch(
+                    roomName,
+                    (uint)lobbyManager.maxPlayers,
+                    true,
+                    "", "", "", 0, 0,
+                    lobbyManager.OnMatchCreate);
+
+                lobbyManager.backDelegate = lobbyManager.StopHost;
+                lobbyManager._isMatchmaking = true;
+                lobbyManager.DisplayIsConnecting();
+
+                lobbyManager.SetServerInfo("Matchmaker Host", lobbyManager.matchHost);
+                return;
+            }
+
+            noServerFound.SetActive(false);
+            foreach (Transform t in serverListRect)
+                Destroy(t.gameObject);
+
+            for (int i = 0; i < matches.Count; ++i)
+            {
+                if(matches[0].currentSize == 1) //one player in game
+                {
+                    lobbyManager.matchMaker.JoinMatch(matches[i].networkId, "", "", "", 0, 0, lobbyManager.OnMatchJoined);
+                    return;
+                }
+            }
+
+            ++currentPage;
+            RequestPage(currentPage);
+        }
+
+        public void RequestPage(int page)
+        {
+            currentPage = 0;//get from server last relevant page;
+            lobbyManager.matchMaker.ListMatches(currentPage, 10, "", true, 0, 0, OnGUIMatchList);
+        }
+
     }
 }
