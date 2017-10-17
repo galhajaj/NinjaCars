@@ -15,6 +15,7 @@ public class LogonManager : MonoBehaviour {
 
     private string _loggedOnUser = "";
     private int _gamesPlayed = 0;
+    private int _gamesLost = 0;
     private int _gamesWon = 0;
     private int _winningStreak = 0;
 
@@ -42,6 +43,7 @@ public class LogonManager : MonoBehaviour {
                     }
                     else
                     {
+                        ++_gamesLost;
                         _winningStreak = 0;
                     }
                 }
@@ -90,6 +92,7 @@ public class LogonManager : MonoBehaviour {
         _loggedOnUser = "";
         _gamesPlayed = 0;
         _gamesWon = 0;
+        _gamesLost = 0;
         _winningStreak = 0;
 
         //gamesparks has their own registeration and authentication. I'll use theirs in the furutre
@@ -111,6 +114,7 @@ public class LogonManager : MonoBehaviour {
                             _loggedOnUser = tempUser;
                             _gamesPlayed = (int)response.ScriptData.GetInt("GamesPlayed");
                             _gamesWon = (int)response.ScriptData.GetInt("GamesWon");
+                            _gamesLost = _gamesPlayed - _gamesWon;
                             _winningStreak = (int)response.ScriptData.GetInt("WinningStreak");
                         }
                         else
@@ -142,8 +146,8 @@ public class LogonManager : MonoBehaviour {
         if (_loggedOnUser != "")
         {
             _welcomeLabel.text = "Hello " + _loggedOnUser + '\n';
-            _welcomeLabel.text += "Games: " + _gamesPlayed.ToString() + '\n';
             _welcomeLabel.text += "Wins: " + _gamesWon.ToString() + '\n';
+            _welcomeLabel.text += "Loses: " + _gamesLost.ToString() + '\n';
             _welcomeLabel.text += "WinningStreak: " + _winningStreak.ToString() + '\n';
 
             _sndBtn.image.color = Color.green;
