@@ -13,6 +13,28 @@ using GameSparks.Platforms.Native;
 /// </summary>
 public class GameSparksUnity : MonoBehaviour
 {
+    //singleton
+    private static GameSparksUnity instance;
+    public static GameSparksUnity Instance {
+        get{ return instance; }
+    }
+
+    private static object singletonLock = new object();
+
+    private void Awake() {
+        lock(singletonLock) {
+            GameSparksUnity[] instances = GameObject.FindObjectsOfType<GameSparksUnity>();
+            if(instances != null && instances.Length > 1 && instance != this) {
+                Debug.Log("Destroying duplicate GameSparksUnity game object.");
+                Destroy(this);
+            } else {
+                instance = this;
+            }
+        }
+    }
+
+
+
 	/// <summary>
 	/// You can override which connection settings GameSparks uses to connect to the backend with this member.
 	/// </summary>
