@@ -18,6 +18,7 @@ public class LogonManager : MonoBehaviour {
     private int _gamesLost = 0;
     private int _gamesWon = 0;
     private int _winningStreak = 0;
+    private int _hstry_winningStreak = 0;
 
     //split into two different classes. one for results and one for communication with the server\logon
     public void UpdateMatchResult(bool won)
@@ -40,6 +41,10 @@ public class LogonManager : MonoBehaviour {
                     {
                         ++_gamesWon;
                         ++_winningStreak;
+                        if(_winningStreak>_hstry_winningStreak)
+                        {
+                            _hstry_winningStreak = _winningStreak;
+                        }
                     }
                     else
                     {
@@ -94,6 +99,7 @@ public class LogonManager : MonoBehaviour {
         _gamesWon = 0;
         _gamesLost = 0;
         _winningStreak = 0;
+        _hstry_winningStreak = 0;
 
         //gamesparks has their own registeration and authentication. I'll use theirs in the furutre
         string tempUser = _username.text;
@@ -116,6 +122,7 @@ public class LogonManager : MonoBehaviour {
                             _gamesWon = (int)response.ScriptData.GetInt("GamesWon");
                             _gamesLost = _gamesPlayed - _gamesWon;
                             _winningStreak = (int)response.ScriptData.GetInt("WinningStreak");
+                            _hstry_winningStreak = (int)response.ScriptData.GetInt("Hstry_WinningStreak");
                         }
                         else
                         {
@@ -148,7 +155,8 @@ public class LogonManager : MonoBehaviour {
             _welcomeLabel.text = "Hello " + _loggedOnUser + '\n';
             _welcomeLabel.text += "Wins: " + _gamesWon.ToString() + '\n';
             _welcomeLabel.text += "Loses: " + _gamesLost.ToString() + '\n';
-            _welcomeLabel.text += "WinningStreak: " + _winningStreak.ToString() + '\n';
+            _welcomeLabel.text += "Current Winning Streak: " + _winningStreak.ToString() + '\n';
+            _welcomeLabel.text += "Historical Winning Streak: " + _hstry_winningStreak.ToString() + '\n';
 
             _sndBtn.image.color = Color.green;
 

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class BackToMapOnEsc : MonoBehaviour
 {
-    bool odd = true;
+//    bool odd = true;
 
     void Start()
     {
@@ -20,8 +20,8 @@ public class BackToMapOnEsc : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.V))
-        {
-            odd = !odd;
+        {///
+            bool odd = false;//!odd;
             if (odd)
             {
                 GameObject.Find("UserDetailsInfo").GetComponent<LogonManager>().UpdateMatchResult(true);
