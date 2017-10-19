@@ -8,7 +8,10 @@ public class JadeGenerator : NetworkBehaviour
     public GameObject JadeObj;
     public float TimeIntervalToCreate = 10.0F;
     private float _timeToCreate;
-    public float SquareAreaToCreateIn = 5.0F;
+    public float MinX = -40.0F;
+    public float MaxX = 20.0F;
+    public float MinY = -40.0F;
+    public float MaxY = 20.0F;
     public int NumberOfJadesAllowedToExist = 10;
 
 	void Start ()
@@ -32,8 +35,27 @@ public class JadeGenerator : NetworkBehaviour
     [Command]
     private void CmdSpawnJade()
     {
-        float randomX = Random.Range(-SquareAreaToCreateIn, SquareAreaToCreateIn);
-        float randomY = Random.Range(-SquareAreaToCreateIn, SquareAreaToCreateIn);
+        bool getLegalPsitionToPlaceJade = false;
+        float randomX = 0.0F;
+        float randomY = 0.0F;
+
+        while (!getLegalPsitionToPlaceJade)
+        {
+            randomX = Random.Range(MinX, MaxX);
+            randomY = Random.Range(MinY, MaxY);
+
+            RaycastHit2D hit = Physics2D.Raycast(new Vector3(randomX, randomY), Vector2.zero);
+            if (hit.collider == null)
+            {
+                getLegalPsitionToPlaceJade = true;
+            }
+            /*else
+            {
+                Debug.Log("Can't generate jade in " + randomX.ToString() + "," + randomY.ToString() + "... try again");
+            }*/
+        }
+
+
         GameObject jade = Instantiate(JadeObj, new Vector3(randomX, randomY), Quaternion.identity) as GameObject;
         NetworkServer.Spawn(jade);
     }
