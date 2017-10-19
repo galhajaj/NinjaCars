@@ -16,10 +16,12 @@ public class UserMovement : NetworkBehaviour
     public float AngularThrust = 300.0F;
 
     private Rigidbody2D _rigidBody;
+    private Tank _tankScript;
 
     void Awake()
     {
         _rigidBody = GetComponent<Rigidbody2D>();
+        _tankScript = GetComponent<Tank>();
     }
 
 	void Start ()
@@ -30,6 +32,9 @@ public class UserMovement : NetworkBehaviour
 	
     void FixedUpdate()
     {
+        if (!_tankScript.IsActive)
+            return;
+
         MoveForward();
         MoveBackward();
         /*MoveRight();

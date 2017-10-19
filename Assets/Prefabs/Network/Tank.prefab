@@ -246,11 +246,13 @@ MonoBehaviour:
   FragmentObj: {fileID: 1304849136878270, guid: 8b4aee8e25c51474fb10d747a860f785,
     type: 2}
   LaserObj: {fileID: 1195524495744418, guid: 5c92985ad495dda468c9d8f67d0c615c, type: 2}
+  SmokeObj: {fileID: 1786787527385192, guid: 327e47b7ae6ccf9498aaef6e9f4664c4, type: 2}
   LaserDuration: 0.1
   ShootSound: {fileID: 8300000, guid: 9663b4ffcd2029843945113f0b70b8c1, type: 3}
-  InvincibilityTime: 5
+  InvincibilityTime: 7.5
   AimObj: {fileID: 1110159028733026, guid: cd42167987c251c4ba2ea32def06ea09, type: 2}
   AimDistance: 3
+  SmokeCreationInterval: 0.5
 --- !u!114 &114659064482147510
 MonoBehaviour:
   m_ObjectHideFlags: 1

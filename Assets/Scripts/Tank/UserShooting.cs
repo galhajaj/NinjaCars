@@ -22,6 +22,7 @@ public class UserShooting : NetworkBehaviour
     public GameObject ShoorikanObj;
     public GameObject FragmentObj;
     public GameObject LaserObj;
+    public GameObject SmokeObj;
     public float LaserDuration = 0.1F;
     public AudioClip ShootSound;
     private AudioSource _audioSource;
@@ -32,9 +33,15 @@ public class UserShooting : NetworkBehaviour
     public GameObject AimObj;
     public float AimDistance = 3.0F;
 
+    private float _timeToCreateSmoke = 0.0F;
+    public float SmokeCreationInterval = 0.5F;
+
+    private Tank _tankScript;
+
     void Start ()
     {
         _audioSource = this.GetComponent<AudioSource>();
+        _tankScript = this.GetComponent<Tank>();
         AmmoCount = ClipMaxSize;
         _timeToAddAmmo = AmmoRegenerationRate;
         _timeToShoot = 0.0F;
@@ -48,14 +55,41 @@ public class UserShooting : NetworkBehaviour
 	
 	void Update ()
     {
+        
         if (_invincibilityTimeRemaining > 0.0F)
+        {
+            if (_timeToCreateSmoke <= 0.0F)
+            {
+                _timeToCreateSmoke = SmokeCreationInterval;
+                CmdCreateSmoke(Players.Instance.GetEnemy().transform.position);
+            }
+            else
+            {
+                _timeToCreateSmoke -= Time.deltaTime;
+            }
             _invincibilityTimeRemaining -= Time.deltaTime;
+        }
 
         if (!isLocalPlayer)
             return;
 
+        if (!_tankScript.IsActive)
+            return;
+
         fireInput();
         ammoRegenration();
+    }
+
+    [Command]
+    private void CmdCreateSmoke(Vector3 position)
+    {
+        RpcCreateSmoke(position);
+    }
+
+    [ClientRpc]
+    private void RpcCreateSmoke(Vector3 position)
+    {
+        Instantiate(SmokeObj, position, Quaternion.identity);
     }
 
     private void fireInput()
@@ -100,9 +134,9 @@ public class UserShooting : NetworkBehaviour
                     {
                         _invincibilityTimeRemaining = InvincibilityTime;
                         CmdUpdateScore(isServer);
-                        //StartCoroutine(RespawnCoroutine(hit.collider.gameObject, InvincibilityTime - (InvincibilityTime / 3)));
-                        CmdRespawnEnemyAfterDeath(hit.collider.gameObject);
-                        //CmdDestroyPlayer(hit.collider.gameObject);
+                        CmdMakeInactive(hit.collider.gameObject);
+                        StartCoroutine(RespawnCoroutine(hit.collider.gameObject, InvincibilityTime));
+                        //CmdRespawnEnemyAfterDeath(hit.collider.gameObject);
                     }
                 }
                 else // else - remove one shield
@@ -123,6 +157,21 @@ public class UserShooting : NetworkBehaviour
                 CmdThrowShoorikanOnClient(this.transform.position, hit.point, Random.Range(0.0F, 360.0F), ammoType);
             }
             //CmdThrowShoorikan(this.transform.position, hit.point, ammoType);
+        }
+    }
+
+    [Command]
+    private void CmdMakeInactive(GameObject player)
+    {
+        RpcMakeInactive(player);
+    }
+
+    [ClientRpc]
+    private void RpcMakeInactive(GameObject player)
+    {
+        if (Players.Instance.GetLocal().gameObject == player)
+        {
+            Players.Instance.GetLocal().IsActive = false;
         }
     }
 
@@ -166,11 +215,12 @@ public class UserShooting : NetworkBehaviour
         spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)].transform.position;
         player.transform.position = spawnPoint;
 
-        // add extra skill & refill the shoorikans
+        // add extra skill & refill the shoorikans & make active again
         if (Players.Instance.GetLocal().gameObject == player)
         {
             SkillBarManager.Instance.AddUniqueRandomChips(1);
             Players.Instance.GetLocal().AmmoData.AmmoCount = Players.Instance.GetLocal().AmmoData.ClipMaxSize;
+            Players.Instance.GetLocal().IsActive = true;
         }
     }
 

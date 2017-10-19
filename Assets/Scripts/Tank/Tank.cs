@@ -28,7 +28,7 @@ public class Tank : NetworkBehaviour
 	
 	void Update ()
     {
-		
+
 	}
 
     public void SetPosition(float x, float y)
