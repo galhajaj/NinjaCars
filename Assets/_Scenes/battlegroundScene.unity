@@ -540,7 +540,7 @@ Prefab:
     - target: {fileID: 224991493426914170, guid: d1b74b8fb53bb9341a302b5f0538e0a5,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224991493426914170, guid: d1b74b8fb53bb9341a302b5f0538e0a5,
         type: 2}
@@ -763,7 +763,7 @@ Prefab:
     - target: {fileID: 224091617123156286, guid: 912706055c763c340b20266fb4f67402,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224091617123156286, guid: 912706055c763c340b20266fb4f67402,
         type: 2}
@@ -1098,7 +1098,7 @@ Prefab:
     - target: {fileID: 224075017181784944, guid: 30d4bff4030801449b17b60141a4a043,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224075017181784944, guid: 30d4bff4030801449b17b60141a4a043,
         type: 2}
@@ -1149,6 +1149,7 @@ GameObject:
   - component: {fileID: 1946539440}
   - component: {fileID: 1946539439}
   - component: {fileID: 1946539438}
+  - component: {fileID: 1946539442}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1236,6 +1237,27 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1946539442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1946539437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
 --- !u!1 &1951651613
 GameObject:
   m_ObjectHideFlags: 0
