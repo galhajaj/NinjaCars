@@ -211,6 +211,7 @@ MonoBehaviour:
   MovementData: {fileID: 114841102568529422}
   AmmoData: {fileID: 114597352289054064}
   ShieldObj: {fileID: 1181424947504274, guid: d2e98fabf6b52fd42a2550129067bbd4, type: 2}
+  JadePickupSound: {fileID: 8300000, guid: 53cfcc1e40047ea47b47d901e7234a15, type: 3}
   IsActive: 1
 --- !u!114 &114467604495892688
 MonoBehaviour:
@@ -249,6 +250,7 @@ MonoBehaviour:
   SmokeObj: {fileID: 1786787527385192, guid: 327e47b7ae6ccf9498aaef6e9f4664c4, type: 2}
   LaserDuration: 0.1
   ShootSound: {fileID: 8300000, guid: 9663b4ffcd2029843945113f0b70b8c1, type: 3}
+  BreakSound: {fileID: 8300000, guid: 09cdaa6fae164b5438bb07b8e298966e, type: 3}
   InvincibilityTime: 7.5
   AimObj: {fileID: 1110159028733026, guid: cd42167987c251c4ba2ea32def06ea09, type: 2}
   AimDistance: 3

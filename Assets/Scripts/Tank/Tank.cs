@@ -10,6 +10,9 @@ public class Tank : NetworkBehaviour
     public UserShooting AmmoData;
     public GameObject ShieldObj;
 
+    public AudioClip JadePickupSound;
+    private AudioSource _audioSource;
+
     public bool IsActive = true;
 
     void Awake()
@@ -19,6 +22,8 @@ public class Tank : NetworkBehaviour
 
     void Start ()
     {
+        _audioSource = this.GetComponent<AudioSource>();
+
         // change layer to local one
         if (isLocalPlayer)
         {
@@ -42,6 +47,7 @@ public class Tank : NetworkBehaviour
         {
             PowerData.Power++;
             NetworkServer.Destroy(other.gameObject);
+            _audioSource.PlayOneShot(JadePickupSound);
         }
     }
 

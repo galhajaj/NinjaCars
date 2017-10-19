@@ -25,6 +25,7 @@ public class UserShooting : NetworkBehaviour
     public GameObject SmokeObj;
     public float LaserDuration = 0.1F;
     public AudioClip ShootSound;
+    public AudioClip BreakSound;
     private AudioSource _audioSource;
 
     public float InvincibilityTime = 5.0F;
@@ -169,6 +170,7 @@ public class UserShooting : NetworkBehaviour
     [ClientRpc]
     private void RpcMakeInactive(GameObject player)
     {
+        _audioSource.PlayOneShot(BreakSound);
         if (Players.Instance.GetLocal().gameObject == player)
         {
             Players.Instance.GetLocal().IsActive = false;
