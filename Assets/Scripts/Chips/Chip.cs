@@ -42,8 +42,6 @@ public abstract class Chip : MonoBehaviour
 
     private Color _NonActiveColor = new Color(0.15F, 0.15F, 0.15F);
 
-    public static int RunningNumber = 0;
-
     void Awake()
     {
 
@@ -69,8 +67,7 @@ public abstract class Chip : MonoBehaviour
 
         _digit = Instantiate(DigitChildObj).transform;
         _digitText = _digit.GetComponent<Text>();
-        RunningNumber++;
-        _digitText.text = RunningNumber.ToString();
+        _digitText.text = SkillBarManager.Instance.GetNextSkillDigit().ToString();
         _digit.SetParent(this.transform, false);
 
         changeColorByType();

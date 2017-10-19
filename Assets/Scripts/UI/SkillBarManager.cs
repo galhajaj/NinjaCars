@@ -11,6 +11,8 @@ public class SkillBarManager : MonoBehaviour
     private List<UnityEngine.Object> _allChips = new List<UnityEngine.Object>();
     private List<GameObject> _skillUnitsList = new List<GameObject>();
 
+    private int _currentSkillDigit = 0;
+
     void Awake()
     {
         if (Instance == null)
@@ -90,6 +92,12 @@ public class SkillBarManager : MonoBehaviour
                 chipScript.ExecuteEnd();
             }
         }
+    }
+    // =====================================================================================================
+    public int GetNextSkillDigit()
+    {
+        _currentSkillDigit++;
+        return _currentSkillDigit;
     }
     // =====================================================================================================
 }
