@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using GameSparks.Core;
+using System.Security.Cryptography;
 
 public class LogonManager : MonoBehaviour {
     private GameObject _gui;
@@ -84,6 +85,31 @@ public class LogonManager : MonoBehaviour {
         }
 
         _sndBtn = _gui.GetComponentInChildren<Button>();
+
+        //load user
+        CspParameters cspParams = new CspParameters();
+
+        cspParams.KeyContainerName = "UsernameKey";  // This is the key used to encrypt and decrypt can be anything.
+        var provider = new RSACryptoServiceProvider(cspParams);
+        // Check if _RegString exsists, if not create it with an encrypted value of -1
+        if (PlayerPrefs.GetString("_Username") == "")
+        {
+            ;
+        }
+        else
+        {
+            string decryptedUsername = System.Text.Encoding.UTF7.GetString(
+                provider.Decrypt   (System.Convert.FromBase64String(PlayerPrefs.GetString("_Username")) , true));
+
+            string decryptedPSWD = System.Text.Encoding.UTF7.GetString(
+                provider.Decrypt   (System.Convert.FromBase64String(PlayerPrefs.GetString("_Password")) , true));
+
+            _username.text = decryptedUsername;
+            _password.text = decryptedPSWD;
+
+            Logon();
+                
+        }
 	}
 	
 	// Update is called once per frame
@@ -123,6 +149,23 @@ public class LogonManager : MonoBehaviour {
                             _gamesLost = _gamesPlayed - _gamesWon;
                             _winningStreak = (int)response.ScriptData.GetInt("WinningStreak");
                             _hstry_winningStreak = (int)response.ScriptData.GetInt("Hstry_WinningStreak");
+
+                            //encrypt username
+                            CspParameters cspParams = new CspParameters();
+                            cspParams.KeyContainerName = "UsernameKey";  // This is the key used to encrypt and decrypt can be anything.
+                            var provider = new RSACryptoServiceProvider(cspParams);
+                            byte[] encryptedBytes = provider.Encrypt(
+                                System.Text.Encoding.UTF8.GetBytes(_username.text), true);
+                            // convert to base64string first for storage as a string in the registry.
+                            string encryptionString =  System.Convert.ToBase64String(encryptedBytes);
+                            PlayerPrefs.SetString ("_Username", encryptionString);
+
+                            byte[] encryptedBytes2 = provider.Encrypt(
+                                System.Text.Encoding.UTF8.GetBytes(_password.text), true);
+                            // convert to base64string first for storage as a string in the registry.
+                            string encryptionString2 =  System.Convert.ToBase64String(encryptedBytes2);
+                            PlayerPrefs.SetString ("_Password", encryptionString2);
+
                         }
                         else
                         {

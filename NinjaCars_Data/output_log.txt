@@ -27,20 +27,30 @@ Platform assembly: D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\GameSparksRT.d
 Loading D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\GameSparksRT.dll into Unity Child Domain
 Platform assembly: D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\System.dll (this message is harmless)
 Platform assembly: D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.479 seconds
+- Completed reload, in  0.043 seconds
 <RI> Initializing input.
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 77.449353 ms
-Error logging
+UnloadTime: 3.656002 ms
+MatchMakingClient ListMatches :https://mm.unet.unity3d.com/json/reply/ListMatchRequest
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Error logging
+MatchMakingClient Create :https://mm.unet.unity3d.com/json/reply/CreateMatchRequest
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.409488 ms
+Destroying duplicate GameSparksUnity game object.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 935.
+Total: 3.064154 ms (FindLiveObjects: 0.325573 ms CreateObjectMapping: 0.123159 ms MarkObjects: 2.600597 ms  DeleteObjects: 0.011973 ms)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 337c -> priority: 1 
-  Thread -> id: 2af4 -> priority: 1 
+  Thread -> id: 21b4 -> priority: 1 
+  Thread -> id: 30f8 -> priority: 1 

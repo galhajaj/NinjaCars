@@ -46,6 +46,7 @@ public class LevelGenerator : NetworkBehaviour
         GeneratePortals();
         GenerateFence();
         GenerateWalls();
+        ClearSpawnArea();
         InstantiateBlocks();
     }
 
@@ -119,6 +120,33 @@ public class LevelGenerator : NetworkBehaviour
                 }
 
             }
+        }
+    }
+
+    Color clearColor()
+    {
+        //return Color.white;
+        return Color.clear;
+    }
+
+    void ClearSpawnArea()
+    {
+        //clean spawn area
+        for (int i = 3; i < LEVEL_HEIGHT; ++i)
+        {
+            _blocksMap[3, i] = clearColor();
+            _blocksMap[4, i] = clearColor();
+
+            _blocksMap[LEVEL_WIDTH - 1, i] = clearColor();
+            _blocksMap[LEVEL_WIDTH - 2, i] = clearColor();
+        }
+        for (int i = 3; i < LEVEL_WIDTH; ++i)
+        {
+            _blocksMap[i, 3] = clearColor();
+            _blocksMap[i, 4] = clearColor();
+
+            _blocksMap[i, LEVEL_HEIGHT - 1] = clearColor();
+            _blocksMap[i, LEVEL_HEIGHT - 2] = clearColor();
         }
     }
         
