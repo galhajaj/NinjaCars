@@ -217,17 +217,21 @@ public class UserShooting : NetworkBehaviour
         spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)].transform.position;
         player.transform.position = spawnPoint;
 
-        // add extra skill & refill the shoorikans & make active again
+        // add extra skill & refill the shoorikans & make active again & init the power
         if (Players.Instance.GetLocal().gameObject == player)
         {
             SkillBarManager.Instance.AddUniqueRandomChips(1);
             Players.Instance.GetLocal().AmmoData.AmmoCount = Players.Instance.GetLocal().AmmoData.ClipMaxSize;
+            Players.Instance.GetLocal().PowerData.InitPower();
             Players.Instance.GetLocal().IsActive = true;
         }
     }
 
     private void ammoRegenration()
     {
+        if (!_tankScript.IsActive)
+            return;
+
         if (AmmoCount >= ClipMaxSize)
         {
             AmmoCount = ClipMaxSize;

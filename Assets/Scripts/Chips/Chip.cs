@@ -111,6 +111,9 @@ public abstract class Chip : MonoBehaviour
     // =====================================================================================================
     public void ExecuteStart()
     {
+        if (!Players.Instance.GetLocal().IsActive)
+            return;
+
         if (_isExecuted)
             return;
 

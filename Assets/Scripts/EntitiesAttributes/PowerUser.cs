@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class PowerUser : MonoBehaviour
 {
-    public int Power = 5;
+    public int StartPower = 5;
+    public int Power;
     //public float PowerRegenerationRate = 0.02F; // 1/sec
 
     void Start()
     {
+        InitPower();
+    }
 
+    public void InitPower()
+    {
+        Power = StartPower;
     }
 
     void Update()

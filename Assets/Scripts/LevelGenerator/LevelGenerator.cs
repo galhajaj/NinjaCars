@@ -33,17 +33,17 @@ public class LevelGenerator : NetworkBehaviour
         // generate random seed on server
         _randomSharedSeed = Random.Range(0, int.MaxValue);
 
-        MessagesTextForDebug.text += "OnStartServer " + _randomSharedSeed.ToString() + "\n";
+        //MessagesTextForDebug.text += "OnStartServer " + _randomSharedSeed.ToString() + "\n";
     }
 
     public override void OnStartClient()
     {
-        MessagesTextForDebug.text += "OnStartClient " + _randomSharedSeed.ToString() + "\n";
+        //MessagesTextForDebug.text += "OnStartClient " + _randomSharedSeed.ToString() + "\n";
 
         // same seed for all = same level generated
         Random.InitState(_randomSharedSeed); 
 
-        GeneratePortals();
+        //GeneratePortals();
         GenerateFence();
         GenerateWalls();
         ClearSpawnArea();
