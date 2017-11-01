@@ -55,6 +55,7 @@ MonoBehaviour:
   CooldownTime: 1
   RequiredAmmo: 0
   IconPic: {fileID: 21300000, guid: d7ce4d53f62641344bab3e25bca73cb2, type: 3}
+  DefenseSound: {fileID: 8300000, guid: 459c9adf9f697f24eb38ed28e86fd69e, type: 3}
 --- !u!114 &114530870419001208
 MonoBehaviour:
   m_ObjectHideFlags: 1

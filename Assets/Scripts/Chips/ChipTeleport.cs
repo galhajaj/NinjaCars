@@ -9,11 +9,14 @@ public class ChipTeleport : Chip
     private Vector2 _positionToTeleportTo;
     public int CostAfterTeleportMarkPlacement = 2;
     public Sprite IconAfterCreation;
+    public AudioClip TeleportSetSound;
+    public AudioClip TeleportMoveSound;
 
     protected override void executeStart()
     {
         if (!_isMarkPlaced)
         {
+            _audioSource.PlayOneShot(TeleportSetSound);
             GameObject teleportMark = Instantiate(TeleportMarkObj, Players.Instance.GetLocal().transform.position, Quaternion.identity) as GameObject;
             _positionToTeleportTo = teleportMark.transform.position;
             _isMarkPlaced = true;
@@ -23,6 +26,7 @@ public class ChipTeleport : Chip
         }
         else
         {
+            _audioSource.PlayOneShot(TeleportMoveSound);
             GameObject tankObj = Players.Instance.GetLocal().gameObject;
             tankObj.transform.position = new Vector3(
                 _positionToTeleportTo.x,

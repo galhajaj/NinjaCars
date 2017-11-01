@@ -5,16 +5,12 @@ using UnityEngine;
 public class ChipBoost : Chip
 {
     public float Thrust = 600.0F;
+    public AudioClip BoostSound;
 
     protected override void executeStart()
     {
+        _audioSource.PlayOneShot(BoostSound);
         Rigidbody2D rigidBody = Players.Instance.GetLocal().GetComponent<Rigidbody2D>();
         rigidBody.AddForce(rigidBody.transform.up * Thrust);
-        //Players.Instance.GetLocal().MovementData.Thrust *= 2;
-    }
-
-    protected override void executeEnd()
-    {
-        //Players.Instance.GetLocal().MovementData.Thrust /= 2;
     }
 }

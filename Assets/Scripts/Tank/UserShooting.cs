@@ -25,6 +25,7 @@ public class UserShooting : NetworkBehaviour
     public GameObject SmokeObj;
     public float LaserDuration = 0.1F;
     public AudioClip ShootSound;
+    public AudioClip DestroySound;
     public AudioClip BreakSound;
     private AudioSource _audioSource;
 
@@ -142,6 +143,7 @@ public class UserShooting : NetworkBehaviour
                 }
                 else // else - remove one shield
                 {
+                    CmdPlayBreakSound();
                     CmdRemoveShield(hit.collider.gameObject);
                 }
             }
@@ -162,6 +164,18 @@ public class UserShooting : NetworkBehaviour
     }
 
     [Command]
+    private void CmdPlayBreakSound()
+    {
+        RpcPlayBreakSound();
+    }
+
+    [ClientRpc]
+    private void RpcPlayBreakSound()
+    {
+        _audioSource.PlayOneShot(BreakSound);
+    }
+
+    [Command]
     private void CmdMakeInactive(GameObject player)
     {
         RpcMakeInactive(player);
@@ -170,7 +184,7 @@ public class UserShooting : NetworkBehaviour
     [ClientRpc]
     private void RpcMakeInactive(GameObject player)
     {
-        _audioSource.PlayOneShot(BreakSound);
+        _audioSource.PlayOneShot(DestroySound);
         if (Players.Instance.GetLocal().gameObject == player)
         {
             Players.Instance.GetLocal().IsActive = false;

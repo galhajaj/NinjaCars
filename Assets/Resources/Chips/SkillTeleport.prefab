@@ -59,6 +59,8 @@ MonoBehaviour:
     type: 2}
   CostAfterTeleportMarkPlacement: 2
   IconAfterCreation: {fileID: 21300000, guid: c41cd85e8fb156040a0d15e44ae03f02, type: 3}
+  TeleportSetSound: {fileID: 8300000, guid: 6b49f78b99495444e8d282c2b3384a38, type: 3}
+  TeleportMoveSound: {fileID: 8300000, guid: 2907005dfc7f72348a57df0a97f259f3, type: 3}
 --- !u!114 &114860863269110082
 MonoBehaviour:
   m_ObjectHideFlags: 1

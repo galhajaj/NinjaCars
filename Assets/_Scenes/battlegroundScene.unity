@@ -1612,7 +1612,7 @@ Prefab:
     - target: {fileID: 224991493426914170, guid: d1b74b8fb53bb9341a302b5f0538e0a5,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 224991493426914170, guid: d1b74b8fb53bb9341a302b5f0538e0a5,
         type: 2}
@@ -1648,6 +1648,11 @@ Prefab:
         type: 2}
       propertyPath: m_ChildAlignment
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114710331286502628, guid: d1b74b8fb53bb9341a302b5f0538e0a5,
+        type: 2}
+      propertyPath: NumberOfChipsAtStart
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d1b74b8fb53bb9341a302b5f0538e0a5, type: 2}

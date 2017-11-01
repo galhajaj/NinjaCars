@@ -224,6 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0166cb0f152a7f4d96016515eb41f38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartPower: 5
   Power: 5
 --- !u!114 &114597352289054064
 MonoBehaviour:
@@ -250,6 +251,7 @@ MonoBehaviour:
   SmokeObj: {fileID: 1786787527385192, guid: 327e47b7ae6ccf9498aaef6e9f4664c4, type: 2}
   LaserDuration: 0.1
   ShootSound: {fileID: 8300000, guid: 9663b4ffcd2029843945113f0b70b8c1, type: 3}
+  DestroySound: {fileID: 8300000, guid: 5d14b6441edc8674dad7c8821e8e050f, type: 3}
   BreakSound: {fileID: 8300000, guid: 09cdaa6fae164b5438bb07b8e298966e, type: 3}
   InvincibilityTime: 7.5
   AimObj: {fileID: 1110159028733026, guid: cd42167987c251c4ba2ea32def06ea09, type: 2}
