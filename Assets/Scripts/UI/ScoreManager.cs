@@ -10,7 +10,7 @@ public class ScoreManager : MonoBehaviour
     {
 		
 	}
-	
+	    
 	void Update ()
     {
         this.GetComponent<Text>().text = MatchParams.Instance.HostPlayerScore.ToString() + " - " + MatchParams.Instance.VisitorPlayerScore.ToString();

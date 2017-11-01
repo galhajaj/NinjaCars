@@ -1,39 +1,85 @@
 Initialize engine version: 2017.1.0f3 (472613c02cf7)
 GfxDevice: creating device client; threaded=1
 Direct3D:
-    Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce GT 710M (ID=0x1140)
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1050 (ID=0x1c8d)
     Vendor:   NVIDIA
-    VRAM:     978 MB
-    Driver:   21.21.13.6909
+    VRAM:     4053 MB
+    Driver:   22.21.13.8253
 Begin MonoManager ReloadAssembly
-Platform assembly: D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\UnityEngine.Timeline.dll (this message is harmless)
-Loading D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\UnityEngine.Timeline.dll into Unity Child Domain
-Platform assembly: D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\BouncyCastle_GameSparks.dll (this message is harmless)
-Loading D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\BouncyCastle_GameSparks.dll into Unity Child Domain
-Platform assembly: D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\GameSparks.Api.dll (this message is harmless)
-Loading D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\GameSparks.Api.dll into Unity Child Domain
-Platform assembly: D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\GameSparks.dll (this message is harmless)
-Loading D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\GameSparks.dll into Unity Child Domain
-Platform assembly: D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\GameSparksRT.dll (this message is harmless)
-Loading D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\GameSparksRT.dll into Unity Child Domain
-Platform assembly: D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\System.dll (this message is harmless)
-Platform assembly: D:\githubRepo\NinjaCars\NinjaCars_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.043 seconds
+Platform assembly: D:\SoftwareProjects\Git\NinjaCars\NinjaCars_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\SoftwareProjects\Git\NinjaCars\NinjaCars_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\SoftwareProjects\Git\NinjaCars\NinjaCars_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\SoftwareProjects\Git\NinjaCars\NinjaCars_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\SoftwareProjects\Git\NinjaCars\NinjaCars_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\SoftwareProjects\Git\NinjaCars\NinjaCars_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: D:\SoftwareProjects\Git\NinjaCars\NinjaCars_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\SoftwareProjects\Git\NinjaCars\NinjaCars_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: D:\SoftwareProjects\Git\NinjaCars\NinjaCars_Data\Managed\UnityEngine.Timeline.dll (this message is harmless)
+Loading D:\SoftwareProjects\Git\NinjaCars\NinjaCars_Data\Managed\UnityEngine.Timeline.dll into Unity Child Domain
+Platform assembly: D:\SoftwareProjects\Git\NinjaCars\NinjaCars_Data\Managed\BouncyCastle_GameSparks.dll (this message is harmless)
+Loading D:\SoftwareProjects\Git\NinjaCars\NinjaCars_Data\Managed\BouncyCastle_GameSparks.dll into Unity Child Domain
+Platform assembly: D:\SoftwareProjects\Git\NinjaCars\NinjaCars_Data\Managed\GameSparks.Api.dll (this message is harmless)
+Loading D:\SoftwareProjects\Git\NinjaCars\NinjaCars_Data\Managed\GameSparks.Api.dll into Unity Child Domain
+Platform assembly: D:\SoftwareProjects\Git\NinjaCars\NinjaCars_Data\Managed\GameSparks.dll (this message is harmless)
+Loading D:\SoftwareProjects\Git\NinjaCars\NinjaCars_Data\Managed\GameSparks.dll into Unity Child Domain
+Platform assembly: D:\SoftwareProjects\Git\NinjaCars\NinjaCars_Data\Managed\GameSparksRT.dll (this message is harmless)
+Loading D:\SoftwareProjects\Git\NinjaCars\NinjaCars_Data\Managed\GameSparksRT.dll into Unity Child Domain
+Platform assembly: D:\SoftwareProjects\Git\NinjaCars\NinjaCars_Data\Managed\System.dll (this message is harmless)
+Platform assembly: D:\SoftwareProjects\Git\NinjaCars\NinjaCars_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.265 seconds
 <RI> Initializing input.
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 3.656002 ms
+UnloadTime: 0.833640 ms
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 481)
+
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 481)
+
+Start LogonManager
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+@@StopClient
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+@@StopMM
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.066961 ms
+Destroying duplicate GameSparksUnity game object.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+@@StopClient
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+@@StopMM
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 534.
+Total: 0.476626 ms (FindLiveObjects: 0.019327 ms CreateObjectMapping: 0.010575 ms MarkObjects: 0.443441 ms  DeleteObjects: 0.002917 ms)
+
 MatchMakingClient ListMatches :https://mm.unet.unity3d.com/json/reply/ListMatchRequest
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+@ MMListMatches
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+@ MMCreateMatch
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -41,16 +87,360 @@ MatchMakingClient Create :https://mm.unet.unity3d.com/json/reply/CreateMatchRequ
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
+@ OnMatchCreate
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Successfully created match: 450359962737693267
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+A connection has already been set as ready. There can only be one.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+ReadyToBegin
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.409488 ms
+UnloadTime: 0.750859 ms
+Create chip SkillHedgehog(Clone)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Create chip SkillTeleport(Clone)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Create chip SkillReload(Clone)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at System.Int32.ToString () [0x00000] in <filename unknown>:0 
+  at ScoreManager.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at PowerBarManager.UpdateUI () [0x00000] in <filename unknown>:0 
+  at PowerBarManager.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ShoorikanBarManager.UpdateUI () [0x00000] in <filename unknown>:0 
+  at ShoorikanBarManager.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Chip.updateCooldownUI () [0x00000] in <filename unknown>:0 
+  at Chip.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Chip.updateCooldownUI () [0x00000] in <filename unknown>:0 
+  at Chip.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Chip.updateCooldownUI () [0x00000] in <filename unknown>:0 
+  at Chip.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Round to win: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Remember to remove script BackToMapOnEsc from Manager in battle scene - or not...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 5608.
+Total: 2.425434 ms (FindLiveObjects: 0.318723 ms CreateObjectMapping: 0.088615 ms MarkObjects: 1.999862 ms  DeleteObjects: 0.017868 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 8.458570 ms
 Destroying duplicate GameSparksUnity game object.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 935.
-Total: 3.064154 ms (FindLiveObjects: 0.325573 ms CreateObjectMapping: 0.123159 ms MarkObjects: 2.600597 ms  DeleteObjects: 0.011973 ms)
+Unloading 51 unused Assets to reduce memory usage. Loaded Objects now: 661.
+Total: 14.356049 ms (FindLiveObjects: 0.124717 ms CreateObjectMapping: 0.060170 ms MarkObjects: 2.210642 ms  DeleteObjects: 11.958694 ms)
 
-Setting up 2 worker threads for Enlighten.
-  Thread -> id: 21b4 -> priority: 1 
-  Thread -> id: 30f8 -> priority: 1 
+MatchMakingClient Destroy :https://mm.unet.unity3d.com/json/reply/DestroyMatchRequest
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+@@StopClient
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+MatchMakingClient DropConnection :https://mm.unet.unity3d.com/json/reply/DropConnectionRequest
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+@@StopMM
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.331122 ms
+Destroying duplicate GameSparksUnity game object.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 658.
+Total: 1.143611 ms (FindLiveObjects: 0.031361 ms CreateObjectMapping: 0.023339 ms MarkObjects: 1.083441 ms  DeleteObjects: 0.004740 ms)
+
+@@StopClient
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+@@StopMM
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+MatchMakingClient ListMatches :https://mm.unet.unity3d.com/json/reply/ListMatchRequest
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+@ MMListMatches
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+@ MMCreateMatch
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+MatchMakingClient Create :https://mm.unet.unity3d.com/json/reply/CreateMatchRequest
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+@ OnMatchCreate
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Successfully created match: 450359962737693291
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+ReadyToBegin
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.210780 ms
+Create chip SkillHedgehog(Clone)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Create chip SkillBoost(Clone)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Create chip SkillReload(Clone)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Round to win: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Remember to remove script BackToMapOnEsc from Manager in battle scene - or not...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 5620.
+Total: 1.911611 ms (FindLiveObjects: 0.218073 ms CreateObjectMapping: 0.050689 ms MarkObjects: 1.627167 ms  DeleteObjects: 0.014951 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.711702 ms
+Destroying duplicate GameSparksUnity game object.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+
+Unloading 44 unused Assets to reduce memory usage. Loaded Objects now: 672.
+Total: 3.752476 ms (FindLiveObjects: 0.037196 ms CreateObjectMapping: 0.017504 ms MarkObjects: 0.841298 ms  DeleteObjects: 2.855747 ms)
+
+MatchMakingClient Destroy :https://mm.unet.unity3d.com/json/reply/DestroyMatchRequest
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+@@StopClient
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+MatchMakingClient DropConnection :https://mm.unet.unity3d.com/json/reply/DropConnectionRequest
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+@@StopMM
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.228284 ms
+Destroying duplicate GameSparksUnity game object.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 665.
+Total: 0.888706 ms (FindLiveObjects: 0.035373 ms CreateObjectMapping: 0.013492 ms MarkObjects: 0.836193 ms  DeleteObjects: 0.002917 ms)
+
+@@StopClient
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+@@StopMM
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Log: connection {1} has been disconnected by timeout; address {::ffff:52.58.14.64:9999} time {46692}, last rec time {44624} rtt {184} timeout {2000}
+ServerDisconnected due to error: Timeout
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+MatchMakingClient ListMatches :https://mm.unet.unity3d.com/json/reply/ListMatchRequest
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+@ MMListMatches
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+@ MMCreateMatch
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+MatchMakingClient Create :https://mm.unet.unity3d.com/json/reply/CreateMatchRequest
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+@ OnMatchCreate
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Successfully created match: 450359962737693323
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+ReadyToBegin
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.269128 ms
+Create chip SkillDefense(Clone)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Create chip SkillTeleport(Clone)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Create chip SkillHedgehog(Clone)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Round to win: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Remember to remove script BackToMapOnEsc from Manager in battle scene - or not...
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 5568.
+Total: 2.016272 ms (FindLiveObjects: 0.243601 ms CreateObjectMapping: 0.265116 ms MarkObjects: 1.492238 ms  DeleteObjects: 0.013857 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.046835 ms
+Destroying duplicate GameSparksUnity game object.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+
+Unloading 51 unused Assets to reduce memory usage. Loaded Objects now: 665.
+Total: 4.056977 ms (FindLiveObjects: 0.067829 ms CreateObjectMapping: 0.031361 ms MarkObjects: 0.776387 ms  DeleteObjects: 3.181035 ms)
+
+MatchMakingClient Destroy :https://mm.unet.unity3d.com/json/reply/DestroyMatchRequest
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+@@StopClient
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+MatchMakingClient DropConnection :https://mm.unet.unity3d.com/json/reply/DropConnectionRequest
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+@@StopMM
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.460580 ms
+Destroying duplicate GameSparksUnity game object.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 658.
+Total: 1.047703 ms (FindLiveObjects: 0.047407 ms CreateObjectMapping: 0.013857 ms MarkObjects: 0.981332 ms  DeleteObjects: 0.004376 ms)
+
+@@StopClient
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+@@StopMM
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Log: connection {1} has been disconnected by timeout; address {::ffff:52.29.208.212:9999} time {56628}, last rec time {54610} rtt {194} timeout {2000}
+ServerDisconnected due to error: Timeout
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+MatchMakingClient ListMatches :https://mm.unet.unity3d.com/json/reply/ListMatchRequest
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+@ MMListMatches
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+MatchMakingClient Join :https://mm.unet.unity3d.com/json/reply/JoinMatchRequest
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+@ OnMatchJoined
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Successfully joined match: 450359962737693347
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+ReadyToBegin
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 3024 -> priority: 1 
+  Thread -> id: afc -> priority: 1 
+  Thread -> id: 29a4 -> priority: 1 
+  Thread -> id: 1cc0 -> priority: 1 

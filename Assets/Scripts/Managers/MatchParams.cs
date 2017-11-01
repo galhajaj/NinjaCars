@@ -42,8 +42,14 @@ public class MatchParams : NetworkBehaviour
             if ((HostPlayerScore >= _numberOfRoundsToWin && isServer) || (VisitorPlayerScore >= _numberOfRoundsToWin && !isServer))
             {
                 UpdateGameResult(true);
+                GameObject.Find("EndOfMatch").GetComponent<EndOfMatchHandler>().EndOfMatch(true);
             }
-            SceneManager.LoadScene("mainScene");
+            else
+            {
+                UpdateGameResult(false);
+                GameObject.Find("EndOfMatch").GetComponent<EndOfMatchHandler>().EndOfMatch(false);
+            }
+         //SceneManager.LoadScene("mainSceneNew");//SceneManager.LoadScene("mainScene");
         }
 	}
 

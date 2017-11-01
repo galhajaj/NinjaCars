@@ -16,7 +16,7 @@ public class BackToMapOnEsc : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene("mainScene");
+            SceneManager.LoadScene("mainSceneNew");
         }
 
         if (Input.GetKeyDown(KeyCode.V))

@@ -9,7 +9,7 @@ public class NetworkGameManager : NetworkBehaviour
     static public List<NetworkSpaceship> sShips = new List<NetworkSpaceship>();
     static public NetworkGameManager sInstance = null;
 
-    public GameObject uiScoreZone;
+    public GameObject uiScoreZone;  
     public Font uiScoreFont;
     
     [Header("Gameplay")]

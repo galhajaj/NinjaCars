@@ -26,7 +26,7 @@ public class GameSparksUnity : MonoBehaviour
             GameSparksUnity[] instances = GameObject.FindObjectsOfType<GameSparksUnity>();
             if(instances != null && instances.Length > 1 && instance != this) {
                 Debug.Log("Destroying duplicate GameSparksUnity game object.");
-                Destroy(this);
+                Destroy(this    );
             } else {
                 instance = this;
             }

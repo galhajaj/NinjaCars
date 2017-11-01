@@ -6,13 +6,19 @@ using GameSparks.Core;
 using System.Security.Cryptography;
 
 public class LogonManager : MonoBehaviour {
+    enum LogonStatus
+    {
+        LS_logoff = 0,
+        LS_logon = 1
+    }
     private GameObject _gui;
     private InputField _username;
     private InputField _password;
     private Text _welcomeLabel;
     private Button _sndBtn;
 
-    private GameObject _mainPanel;
+    //private GameObject _mainPanel;
+    LogonStatus _logonStatus = LogonStatus.LS_logoff;
 
     private string _loggedOnUser = "";
     private int _gamesPlayed = 0;
@@ -20,6 +26,21 @@ public class LogonManager : MonoBehaviour {
     private int _gamesWon = 0;
     private int _winningStreak = 0;
     private int _hstry_winningStreak = 0;
+
+    private static LogonManager _instance = null;
+    void Awake()
+    {
+        if (_instance == null)
+        {
+            _instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else if (_instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+    }
 
     //split into two different classes. one for results and one for communication with the server\logon
     public void UpdateMatchResult(bool won)
@@ -57,11 +78,15 @@ public class LogonManager : MonoBehaviour {
     }
 
 	// Use this for initialization
-	void Start ()
+    void Start ()
     {
+        DontDestroyOnLoad(gameObject);
+        Debug.Log("Start LogonManager");
+        if (_logonStatus == LogonStatus.LS_logon)
+            return;
         _gui = GameObject.Find("UserDetailsGui");
-        _mainPanel = GameObject.Find("MainPanel");
-        SetMainPanelActive(true); // TODO: GalHajaj change that to true 
+//        _mainPanel = GameObject.Find("MainPanel");
+//        SetMainPanelActive(true); // TODO: GalHajaj change that to true 
         foreach (InputField inpfld in _gui.GetComponentsInChildren<InputField>())
         {
             if (inpfld.name == "UsernameInput")
@@ -120,6 +145,7 @@ public class LogonManager : MonoBehaviour {
 
     public void Logon()
     {
+        Debug.Log("Logon function");
         _loggedOnUser = "";
         _gamesPlayed = 0;
         _gamesWon = 0;
@@ -127,22 +153,33 @@ public class LogonManager : MonoBehaviour {
         _winningStreak = 0;
         _hstry_winningStreak = 0;
 
+        if (_username == null)
+        {
+            Debug.Log("username textbox is null");
+        }
         //gamesparks has their own registeration and authentication. I'll use theirs in the furutre
         string tempUser = _username.text;
         string tempPassword = _password.text;
+
+        if (tempUser == "")
+        {
+            return;
+        }
         new GameSparks.Api.Requests.LogEventRequest()
             .SetEventKey("Logon")
             .SetEventAttribute("Username", tempUser)
             .SetEventAttribute("Password", tempPassword)
             .Send((response) =>
                 {
+                    Debug.Log("Logon callback");
                     if (!response.HasErrors)
                     {
+                        _logonStatus = LogonStatus.LS_logon;
                         Debug.Log("Logon attempt was made successfuly");
                         bool success = (bool)response.ScriptData.GetBoolean("Success");
                         if (success == true)
                         {
-                            Debug.Log("SUCCESS");
+                            Debug.Log("Successful logon - GameSparks");
                             _loggedOnUser = tempUser;
                             _gamesPlayed = (int)response.ScriptData.GetInt("GamesPlayed");
                             _gamesWon = (int)response.ScriptData.GetInt("GamesWon");
@@ -182,7 +219,7 @@ public class LogonManager : MonoBehaviour {
 
     void SetMainPanelActive(bool active)
     {
-        _mainPanel.SetActive(active);
+//        _mainPanel.SetActive(active);
     }
 
     public void UpdateGui(bool visible = true)

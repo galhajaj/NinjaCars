@@ -220,6 +220,7 @@ namespace Prototype.NetworkLobby
             if (_isMatchmaking)
             {
                 StopMatchMaker();
+//                matchMaker.DestroyMatch((NetworkID)_currentMatchID, 0, OnDestroyMatch);
             }
 
             ChangeTo(mainMenuPanel);
