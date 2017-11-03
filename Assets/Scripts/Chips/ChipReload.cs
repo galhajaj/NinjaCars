@@ -8,7 +8,7 @@ public class ChipReload : Chip
 
     protected override void executeStart()
     {
-        _audioSource.PlayOneShot(ReloadSound);
+        Players.Instance.GetLocal().GetComponent<AudioSource>().PlayOneShot(ReloadSound);
         UserShooting userShootingScript = Players.Instance.GetLocal().GetComponent<UserShooting>();
         userShootingScript.AmmoCount = userShootingScript.ClipMaxSize;
     }

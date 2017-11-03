@@ -8,7 +8,7 @@ public class ChipDefense : Chip
 
     protected override void executeStart()
     {
-        _audioSource.PlayOneShot(DefenseSound);
+        Players.Instance.GetLocal().GetComponent<AudioSource>().PlayOneShot(DefenseSound);
         Tank tankScript = Players.Instance.GetLocal();
         tankScript.CmdAddShield();
     }

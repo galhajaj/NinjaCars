@@ -26,8 +26,6 @@ public abstract class Chip : MonoBehaviour
     private Transform _digit;
     private Text _digitText;
 
-    protected AudioSource _audioSource;
-
     public ChipType Type = ChipType.ACTIVE;
 
     private bool _isExecuted = false;
@@ -73,8 +71,6 @@ public abstract class Chip : MonoBehaviour
         _digit.SetParent(this.transform, false);
 
         changeColorByType();
-
-        _audioSource = Players.Instance.GetLocal().GetComponent<AudioSource>();
     }
 	
 	void Update()

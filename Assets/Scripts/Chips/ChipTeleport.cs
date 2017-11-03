@@ -16,7 +16,7 @@ public class ChipTeleport : Chip
     {
         if (!_isMarkPlaced)
         {
-            _audioSource.PlayOneShot(TeleportSetSound);
+            Players.Instance.GetLocal().GetComponent<AudioSource>().PlayOneShot(TeleportSetSound);
             GameObject teleportMark = Instantiate(TeleportMarkObj, Players.Instance.GetLocal().transform.position, Quaternion.identity) as GameObject;
             _positionToTeleportTo = teleportMark.transform.position;
             _isMarkPlaced = true;
@@ -26,7 +26,7 @@ public class ChipTeleport : Chip
         }
         else
         {
-            _audioSource.PlayOneShot(TeleportMoveSound);
+            Players.Instance.GetLocal().GetComponent<AudioSource>().PlayOneShot(TeleportMoveSound);
             GameObject tankObj = Players.Instance.GetLocal().gameObject;
             tankObj.transform.position = new Vector3(
                 _positionToTeleportTo.x,
