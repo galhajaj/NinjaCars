@@ -234,7 +234,7 @@ public class UserShooting : NetworkBehaviour
         // add extra skill & refill the shoorikans & make active again & init the power
         if (Players.Instance.GetLocal().gameObject == player)
         {
-            SkillBarManager.Instance.AddUniqueRandomChips(1);
+            //SkillBarManager.Instance.AddUniqueRandomChips(1);
             Players.Instance.GetLocal().AmmoData.AmmoCount = Players.Instance.GetLocal().AmmoData.ClipMaxSize;
             Players.Instance.GetLocal().PowerData.InitPower();
             Players.Instance.GetLocal().IsActive = true;

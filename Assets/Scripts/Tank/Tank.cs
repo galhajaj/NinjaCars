@@ -15,6 +15,10 @@ public class Tank : NetworkBehaviour
 
     public bool IsActive = true;
 
+    public int MaxShields = 4;
+    public float ShieldAddTime = 2.0F;
+    private float _timeToAddShield; 
+
     void Awake()
     {
 
@@ -22,6 +26,7 @@ public class Tank : NetworkBehaviour
 
     void Start ()
     {
+        _timeToAddShield = ShieldAddTime;
         _audioSource = this.GetComponent<AudioSource>();
 
         // change layer to local one
@@ -33,7 +38,21 @@ public class Tank : NetworkBehaviour
 	
 	void Update ()
     {
+        if (!isLocalPlayer)
+            return;
 
+        int shields = Players.Instance.GetLocal().transform.childCount;
+        if (shields > MaxShields)
+            return;
+
+        _timeToAddShield -= Time.deltaTime;
+
+        if (_timeToAddShield <= 0.0F)
+        {
+            _timeToAddShield = ShieldAddTime;
+            Tank tankScript = Players.Instance.GetLocal();
+            tankScript.CmdAddShield();
+        }
 	}
 
     public void SetPosition(float x, float y)

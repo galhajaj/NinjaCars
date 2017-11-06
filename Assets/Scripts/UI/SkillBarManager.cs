@@ -36,6 +36,9 @@ public class SkillBarManager : MonoBehaviour
             _allChips.Add(allChipsArray[i]);
 
         AddUniqueRandomChips(NumberOfChipsAtStart);
+
+        AddChip("SkillBoost");
+        //AddChip("SkillTeleport");
     }
 
     void Update()
@@ -49,6 +52,22 @@ public class SkillBarManager : MonoBehaviour
         {
             createUniqueRandomChip();
         }
+    }
+    // =====================================================================================================
+    public void AddChip(string name)
+    {
+        if (_allChips.Count == 0)
+        {
+            Debug.LogError("No Chips...");
+            return;
+        }
+
+        GameObject newChip = Instantiate(Resources.Load("Chips/"+name) as GameObject);
+
+        newChip.transform.SetParent(this.transform, false);
+        _skillUnitsList.Add(newChip);
+
+        Debug.Log("Create chip " + newChip.name);
     }
     // =====================================================================================================
     private void createUniqueRandomChip()

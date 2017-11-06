@@ -78,8 +78,8 @@ MonoBehaviour:
   DigitChildObj: {fileID: 1381562932806444, guid: cf810e4f148161d4496129630fe6fcdf,
     type: 2}
   Type: 1
-  Cost: 2
-  CooldownTime: 1
+  Cost: 0
+  CooldownTime: 2
   RequiredAmmo: 0
   IconPic: {fileID: 21300000, guid: 001333751a24d104c9ededdb0e5b338f, type: 3}
   Thrust: 10000

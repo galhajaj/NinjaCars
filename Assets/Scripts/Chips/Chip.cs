@@ -60,10 +60,10 @@ public abstract class Chip : MonoBehaviour
         _icon.SetParent(this.transform, false);
         setIcon(IconPic);
 
-        _cost = Instantiate(CostChildObj).transform;
+        /*_cost = Instantiate(CostChildObj).transform;
         _costText = _cost.Find("Text").GetComponent<Text>();
         _costText.text = Cost.ToString();
-        _cost.SetParent(this.transform, false);
+        _cost.SetParent(this.transform, false);*/
 
         _digit = Instantiate(DigitChildObj).transform;
         _digitText = _digit.GetComponent<Text>();

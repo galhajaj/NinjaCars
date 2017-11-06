@@ -933,7 +933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 565dff7099d4b3d4cac116ddf48a28e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfRounds: 5
+  NumberOfRounds: 1
   HostPlayerScore: 0
   VisitorPlayerScore: 0
 --- !u!114 &636753935
@@ -1612,7 +1612,7 @@ Prefab:
     - target: {fileID: 224991493426914170, guid: d1b74b8fb53bb9341a302b5f0538e0a5,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224991493426914170, guid: d1b74b8fb53bb9341a302b5f0538e0a5,
         type: 2}
@@ -1652,7 +1652,7 @@ Prefab:
     - target: {fileID: 114710331286502628, guid: d1b74b8fb53bb9341a302b5f0538e0a5,
         type: 2}
       propertyPath: NumberOfChipsAtStart
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d1b74b8fb53bb9341a302b5f0538e0a5, type: 2}
@@ -1993,7 +1993,7 @@ Prefab:
     - target: {fileID: 224091617123156286, guid: 912706055c763c340b20266fb4f67402,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224091617123156286, guid: 912706055c763c340b20266fb4f67402,
         type: 2}
@@ -3241,7 +3241,7 @@ Prefab:
     - target: {fileID: 224075017181784944, guid: 30d4bff4030801449b17b60141a4a043,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224075017181784944, guid: 30d4bff4030801449b17b60141a4a043,
         type: 2}
