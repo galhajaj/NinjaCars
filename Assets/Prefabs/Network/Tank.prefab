@@ -242,7 +242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ClipMaxSize: 6
   AmmoCount: 0
-  AmmoRegenerationRate: 1.25
+  AmmoRegenerationRate: 0.75
   FireRate: 0.1
   ShootXDirError: 0.05
   ShootYDirError: 0.05
@@ -299,7 +299,7 @@ MonoBehaviour:
   Thrust: 300
   ReverseThrust: 150
   SidewaysThrust: 300
-  AngularThrust: 1200
+  AngularThrust: 900
 --- !u!114 &114871112910005614
 MonoBehaviour:
   m_ObjectHideFlags: 1

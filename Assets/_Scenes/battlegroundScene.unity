@@ -1338,7 +1338,7 @@ MonoBehaviour:
   DestroyedCube: {fileID: 1291426294325130, guid: c417f73fa096b6545b06497908ef3c66,
     type: 2}
   NumberOfPortals: 4
-  NumberOfWalls: 10
+  NumberOfWalls: 15
 --- !u!4 &828660754
 Transform:
   m_ObjectHideFlags: 0
@@ -1755,7 +1755,7 @@ Prefab:
     - target: {fileID: 224991493426914170, guid: d1b74b8fb53bb9341a302b5f0538e0a5,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224991493426914170, guid: d1b74b8fb53bb9341a302b5f0538e0a5,
         type: 2}
@@ -3514,7 +3514,7 @@ Prefab:
     - target: {fileID: 224075017181784944, guid: 30d4bff4030801449b17b60141a4a043,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224075017181784944, guid: 30d4bff4030801449b17b60141a4a043,
         type: 2}
