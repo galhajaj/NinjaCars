@@ -49,10 +49,10 @@ public class UserShooting : NetworkBehaviour
         _timeToShoot = 0.0F;
 
         // add aim
-        if (isLocalPlayer)
+        /*if (isLocalPlayer)
         {
             Instantiate(AimObj, this.transform.position + Quaternion.Euler(0, 0, 90) * this.transform.right * AimDistance, Quaternion.identity).transform.SetParent(this.transform);
-        }
+        }*/
     }
 	
 	void Update ()
