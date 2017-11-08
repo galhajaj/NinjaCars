@@ -211,7 +211,7 @@ MonoBehaviour:
   PowerData: {fileID: 114467604495892688}
   MovementData: {fileID: 114841102568529422}
   AmmoData: {fileID: 114597352289054064}
-  ShieldObj: {fileID: 1181424947504274, guid: d2e98fabf6b52fd42a2550129067bbd4, type: 2}
+  ShieldObj: {fileID: 1406065519902496, guid: 679b96fe6bde56a408a6c014f60a53b6, type: 2}
   JadePickupSound: {fileID: 8300000, guid: 53cfcc1e40047ea47b47d901e7234a15, type: 3}
   IsActive: 1
   MaxShields: 4

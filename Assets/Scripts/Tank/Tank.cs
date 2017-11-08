@@ -34,6 +34,13 @@ public class Tank : NetworkBehaviour
         {
             this.gameObject.layer = LayerMask.NameToLayer("TankLocalLayer");
         }
+
+        if (!isLocalPlayer)
+        {
+            GetComponent<LineRenderer>().enabled = false;
+        }
+
+        Invoke("addInitLifeGems", 0.25F);
     }
 	
 	void Update ()
@@ -54,6 +61,18 @@ public class Tank : NetworkBehaviour
             tankScript.CmdAddShield();
         }
 	}
+
+    private void addInitLifeGems()
+    {
+        if (!isLocalPlayer)
+            return;
+
+        for (int i = 0; i < MaxShields; ++i)
+        {
+            Tank tankScript = Players.Instance.GetLocal();
+            tankScript.CmdAddShield();
+        }
+    }
 
     public void SetPosition(float x, float y)
     {
@@ -81,8 +100,8 @@ public class Tank : NetworkBehaviour
     {
         GameObject shield = Instantiate(ShieldObj, this.transform.position, Quaternion.identity) as GameObject;
         int shieldCount = this.transform.childCount;
-        float newScale = shield.transform.localScale.x * (1.0F + 0.2F * (float)shieldCount);
-        shield.transform.localScale = new Vector3(newScale, newScale);
+        //float newScale = shield.transform.localScale.x * (1.0F + 0.2F * (float)shieldCount);
+        //shield.transform.localScale = new Vector3(newScale, newScale);
         shield.transform.SetParent(this.transform);
     }
 
