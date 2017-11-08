@@ -16,6 +16,7 @@ public class MyLobby : NetworkLobbyManager
     bool _isServer = false;
     void Start()
    {
+        Debug.Log("## MyLobby Start");
         DontDestroyOnLoad(gameObject);
         //MMStart ();
         //      MMListMatches ();
@@ -26,6 +27,7 @@ public class MyLobby : NetworkLobbyManager
 
     public void KickedMessageHandler(NetworkMessage netMsg)
     {
+        Debug.Log("## KickedMessageHandler");
         netMsg.conn.Disconnect();
     }
 
@@ -37,6 +39,7 @@ public class MyLobby : NetworkLobbyManager
         }
       Debug.Log ("@ MMStart");
    
+        Debug.Log("## Start MatchMaker");
       StartMatchMaker();
    }
 
@@ -110,7 +113,7 @@ public class MyLobby : NetworkLobbyManager
 */
    public override void OnLobbyClientSceneChanged(NetworkConnection conn)
    {
-        string temp = SceneManager.GetSceneAt(0).name;
+      string temp = SceneManager.GetSceneAt(0).name;
       if (SceneManager.GetSceneAt (0).name == lobbyScene)
       {
          GuiOnPlayScene (false);
@@ -186,9 +189,19 @@ public class MyLobby : NetworkLobbyManager
 
     public void DestroyMatch()
     {
-        if (_isServer == false)
+        if (matchInfo == null)
+        {
             return;
-        matchMaker.DestroyMatch((NetworkID)_currentMatchID, 0, OnDestroyMatch);
+        }
+
+        Debug.Log("$$StopHost MyLobby");
+        StopHost();
+
+//        Debug.Log("## DestoryMatch");
+//        if (_isServer == false)
+//            return;
+//        Debug.Log("## DestroyMatch2");
+//        matchMaker.DestroyMatch((NetworkID)_currentMatchID, 0, OnDestroyMatch);
         _currentPage = 0;
         _isServer = false;
     }

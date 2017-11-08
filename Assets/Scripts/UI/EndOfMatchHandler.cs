@@ -11,8 +11,8 @@ public class EndOfMatchHandler : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         GetComponent<Text>().text = "";
-	}
-	
+    }
+
 	// Update is called once per frame
 	void Update () {
         if (_isGameOver)
@@ -29,6 +29,8 @@ public class EndOfMatchHandler : MonoBehaviour {
 
     public void EndOfMatch(bool won)
     {
+        if (_isGameOver)
+            return;
         if (won)
         {
             GetComponent<Text>().text = "YOU WON";

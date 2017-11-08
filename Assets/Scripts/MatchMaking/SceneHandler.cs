@@ -14,7 +14,11 @@ public class SceneHandler : MonoBehaviour {
 
         lobby.DestroyMatch();
         Debug.Log("@@StopClient");
-        lobby.StopClient();
+        if (lobby.matchInfo!= null)
+        {
+            Debug.Log("$$StopHost sceneHandler");
+            lobby.StopHost();
+        }
         Debug.Log("@@StopMM");
         lobby.StopMatchMaker();
 
